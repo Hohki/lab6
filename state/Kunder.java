@@ -4,7 +4,7 @@ public class Kunder {
 	public int customerNumber;
 	private Object customerState;
 	
-	public void Customer(int customerNumber, Object customerState) {
+	public Kunder (int customerNumber, Object customerState) {
 		this.customerNumber = customerNumber;
 		this.customerState = customerState;
 	}
