@@ -1,12 +1,11 @@
 package lab6.state;
 
 import java.util.ArrayList;
-import lab6.state.Ankomsthändelser;
 
 public class StoreState extends State {
 	ArrayList<Kunder> customers = new ArrayList<Kunder>();
-	private Object Kassakö;
-	private Object CreateCustomer;
+	private Kassakö Kassakö;
+	private CreateCustomer CreateCustomer;
 	
 	final int numberOfKassor;
 	final int maxCustomer;
@@ -24,16 +23,18 @@ public class StoreState extends State {
 	private int freeKassor;
 	private double missedCashierTime;
 	private double queueTime;
-	private double nextArrival;
-	private double nextPlock;
-	private double nextPay;
+	private ExponentialRandomStream nextArrival;
+	private UniformRandomStream nextPlock;
+	private UniformRandomStream nextPay;
 	private Kunder currentEvent;
 	
 	public StoreState(int numberOfKassor, int maxCustomer, double closeTime,
 					  double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed) {
 		this.Kassakö = new Kassakö();
 		this.CreateCustomer = new CreateCustomer();
-		
+		this.nextArrival = new ExponentialRandomStream(seed);
+		this.nextPlock = new UniformRandomStream(pickMin, pickMax, seed);
+		this.nextPay = new UniformRandomStream(payMin, payMax, seed);
 		
 		this.numberOfKassor = numberOfKassor;
 		this.maxCustomer = maxCustomer;
@@ -53,8 +54,8 @@ public class StoreState extends State {
 		this.queueTime = 0;
 		
 	}
-	public Kunder MakeCustomer() {
-		return this.CreateCustomer.createCustomer();
+	public void MakeCustomer() {
+		this.CreateCustomer.CreateCustomers();
 	}
 	
 	public String GetQueue() {
@@ -71,6 +72,18 @@ public class StoreState extends State {
 	
 	public int GetLength() {
 		return ((Kassakö) this.Kassakö).size();
+	}
+	
+	public double GetNextArrival() {
+		return this.nextArrival.next();
+	}
+	
+	public double GetNextPlock() {
+		return this.nextPlock.next();
+	}
+	
+	public double GetNextPay() {
+		return this.nextPay.next();
 	}
 	
 	public int NumberOfCustomers() {
