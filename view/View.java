@@ -1,5 +1,5 @@
 package lab6.view;
 
-public abstract class View {
+public class View {
 
 }

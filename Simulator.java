@@ -4,23 +4,25 @@ import lab6.event.EventQueue;
 import lab6.event.Event;
 import lab6.state.State;
 
-public abstract class Simulator {
+public class Simulator {
 	
 	EventQueue queue;
 	Event event;
 	State state;
 	
 	
-	//Constructs and runs the simulator.
-	public void simulator(State state) {
+	//Constructs and runs the simulation.
+	public Simulator(State state) {
 		
 		this.state = state;
 		this.queue = new EventQueue();
 		
-		while (!state.stopSim() && !queue.isEmpty()) {
-			
-			
+		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
+		while (!state.simStop && !queue.isEmpty()) {
+			Event currentEvent = queue.getFirst();
+			currentEvent.effect();
 		}
+		System.out.print("The simulation is finished");
 		}
 	}
 	

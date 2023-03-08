@@ -1,7 +1,7 @@
 package lab6.state;
 import java.util.Observable;
 
-public abstract class State extends Observable {
+public class State extends Observable {
 	private int simState = 0;
 	public boolean simStop = false;
 	protected double simTime;
