@@ -1,5 +1,8 @@
 package lab6.view;
 
+import java.util.Observable;
+import lab6.event.Event;
+import lab6.event.Stopphändelse;
 import lab6.state.*;
 
 public class StoreView extends View {
@@ -8,10 +11,20 @@ public class StoreView extends View {
 	public StoreView(StoreState state) {
 		super(state);
 		this.state = state;
-		parameters();
+		Parameters();
+	}
+	
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		Event event = (Event) arg1;
+		WriteLine(event);
+		
+		if (event instanceof Stopphändelse) {
+			EndPrint();
+		}
 	}
 		
-		public void parameters() {
+		public void Parameters() {
 			System.out.println("PARAMETRAR");
 			System.out.println("==========");
 			System.out.println("Antal kassor, N..........: " + state.GetNumberOfKassor());
@@ -30,9 +43,12 @@ public class StoreView extends View {
 		public void WriteLine(Object event) {
 			System.out.println(String.format
 			("%6.2f %s  %s  %3d %7.2f % 4d % 4d  % 4d    % 4d  %6.2f    % 4d    %s",
-			 state.CurrentTime(), event.toString(), state.GetStore() ? "Ö" : "S", state.FreeKassor()));
-			System.out.print(state.CurrentTime() + " ");
-			System.out.printf("'%-10s' %n", event);
-			System.out.print();
+			 state.CurrentTime(), event.toString(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(), 
+			 state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
+			 state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString()));
+		}
+		
+		public void EndPrint() {
+			
 		}
 }
