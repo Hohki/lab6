@@ -18,15 +18,17 @@ public class StoreState extends State {
 	final long seed;
 	
 	private int customer;
-	private int payingCustomers;
+	private int payedCustomers;
 	private int missedCustomers;
+	private int queuedCustomers;
 	private int freeKassor;
-	private double missedCashierTime;
+	private double freeKassorTime;
 	private double queueTime;
 	private ExponentialRandomStream nextArrival;
 	private UniformRandomStream nextPlock;
 	private UniformRandomStream nextPay;
 	private Kunder currentEvent;
+	private boolean store;
 	
 	public StoreState(int numberOfKassor, int maxCustomer, double closeTime,
 					  double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed) {
@@ -47,19 +49,88 @@ public class StoreState extends State {
 		this.seed = seed;
 		
 		this.customer = 0;
-		this.payingCustomers = 0;
+		this.payedCustomers = 0;
 		this.missedCustomers = 0;
 		this.freeKassor = numberOfKassor;
-		this.missedCashierTime = 0.0d;
 		this.queueTime = 0;
+		this.store = false;
 		
 	}
+	
+	public int GetNumberOfCustomers() {
+		return this.customer;
+	}
+	
+	public void IncreaseNumberOfCustomer() {
+		this.customer = this.customer + 1;
+	}
+	
+	public void DecreaseNumberOfCustomers() {
+		this.customer = this.customer - 1;
+	}
+	
+	public int NumberOfPayedCustomers() {
+		return this.payedCustomers;
+	}
+	
+	public void IncreaseNumberOfPayedCustomers() {
+		this.payedCustomers = this.payedCustomers + 1;
+	}
+	
+	public int NumberOfQueuedCustomers() {
+		return this.queuedCustomers;
+	}
+	
+	public void IncreaseNumberOfQueuedCustomers() {
+		this.queuedCustomers = this.queuedCustomers + 1;
+	}
+	
+	public Kassakö CurrentlyQueued() {
+		return this.Kassakö;
+	}
+	
+	public int GetNumberOfKassor() {
+		return this.numberOfKassor;
+	}
+	
+	public int GetMaxCustomer() {
+		return this.maxCustomer;
+	}
+	
+	public double GetLambda() {
+		return this.lambda;
+	}
+	
+	public double GetPlockMin() {
+		return this.pickMin;
+	}
+	
+	public double GetPlockMax() {
+		return this.pickMax;
+	}
+	
+	public double GetPayMin() {
+		return this.payMin;
+	}
+	
+	public double GetPayMax() {
+		return this.payMax;
+	}
+	
+	public long GetSeed() {
+		return this.seed;
+	}
+	
+	public boolean GetStore() {
+		return this.store;
+	}
+	
 	public void MakeCustomer() {
 		this.CreateCustomer.CreateCustomers();
 	}
 	
-	public String GetQueue() {
-		return this.Kassakö.toString();
+	public Kassakö GetQueue() {
+		return this.Kassakö;
 	}
 	
 	public void AddToQueue(Kunder kund) {
@@ -109,12 +180,12 @@ public class StoreState extends State {
 		this.missedCustomers = this.missedCustomers + 1;
 	}
 	
-	public double MissedCashierTime() {
-		return this.missedCashierTime;
+	public double GetFreeKassorTime() {
+		return this.freeKassorTime;
 	}
 	
-	private void AddMissedCashierTime(double missedCashierTime) {
-		this.missedCashierTime = this.missedCashierTime + missedCashierTime;
+	public void IncreaseFreeKassorTime(double time) {
+		this.freeKassorTime = this.freeKassorTime + time;
 	}
 	
 	public double GetQueueTime() {

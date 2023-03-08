@@ -1,5 +1,6 @@
 package lab6;
 
+
 import lab6.event.EventQueue;
 import lab6.event.Event;
 import lab6.state.State;
@@ -27,4 +28,8 @@ public class Simulator {
 		}
 	}
 	
-//hey
+public class Simulator {
+
+
+}
+
