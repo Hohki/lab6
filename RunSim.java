@@ -9,15 +9,24 @@ import lab6.view.StoreView;
 
 
 public class RunSim {
+	
+
 
 	
 	public static void main(String[] args) {
 		
 		
-		StoreState shoppingState = new StoreState(//saker);
-		StoreView storeView = new StoreView(shoppingState);
-		shoppingState.addObserver(storeView);
-		Simulator sim = new Simulator(state);
+		StoreState state = new StoreState(//saker);									//creates state
+		EventQueue queue = new EventQueue();										//creates queue
+		
+		queue.addsomestartthingy();
+		queue.addsomeendythingy();
+		queue.addsomestopthingy();
+				
+		StoreView storeView = new StoreView(state);									//creates view
+		state.addObserver(storeView);												//creates observer
+		Simulator sim = new Simulator(state, queue);								//creates simulator
+		sim.Run();
 	}
 	
 }

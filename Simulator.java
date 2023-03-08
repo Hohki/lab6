@@ -13,18 +13,22 @@ public class Simulator {
 	
 	
 	//Constructs and runs the simulation.
-	public Simulator(State state) {
+	public Simulator(State state, EventQueue queue) {
 		
 		this.state = state;
-		this.queue = new EventQueue();
-		
-		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
-		while (!state.simStop && !queue.isEmpty()) {
-			Event currentEvent = queue.getFirst();
-			currentEvent.effect();
-		}
-		System.out.print("The simulation is finished");
-		
-		}
+		this.queue = queue;
 	}
+	
+	public void Run () {
+		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
+				while (!state.simStop && !queue.isEmpty()) {
+					Event currentEvent = queue.getFirst();
+					currentEvent.effect();
+				}
+				System.out.print("The simulation is finished");
+				
+		
+	}
+	
+}
 
