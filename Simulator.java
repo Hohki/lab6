@@ -1,5 +1,5 @@
 package lab6;
 
-public abstract class Simulator {
+public class Simulator {
 
 }
