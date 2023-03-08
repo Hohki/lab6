@@ -1,10 +1,11 @@
 package lab6;
 
+<<<<<<< HEAD
 import lab6.event.EventQueue;
 import lab6.event.Event;
 import lab6.state.State;
 
-public abstract class Simulator {
+public class Simulator {
 	
 	EventQueue queue;
 	Event event;
@@ -24,5 +25,8 @@ public abstract class Simulator {
 		}
 	}
 	
+=======
+public class Simulator {
+>>>>>>> view
 
 }
