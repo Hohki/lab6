@@ -1,6 +1,5 @@
 package lab6.view;
 
-public class View {
 import java.util.Observer;
 import lab6.state.State;
 import java.util.Observable;

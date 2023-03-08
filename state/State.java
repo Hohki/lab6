@@ -1,4 +1,5 @@
 package lab6.state;
+
 import java.util.Observable;
 
 public class State extends Observable {
