@@ -31,7 +31,7 @@ public class StoreState extends State {
 					  double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed) {
 		this.Kassakö = new Kassakö();
 		this.CreateCustomer = new CreateCustomer();
-		this.nextArrival = new ExponentialRandomStream(seed);
+		this.nextArrival = new ExponentialRandomStream(lambda, seed);
 		this.nextPlock = new UniformRandomStream(pickMin, pickMax, seed);
 		this.nextPay = new UniformRandomStream(payMin, payMax, seed);
 		
