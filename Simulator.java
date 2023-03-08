@@ -23,8 +23,8 @@ public class Simulator {
 			currentEvent.effect();
 		}
 		System.out.print("The simulation is finished");
+		
 		}
 	}
 	
 
-}
