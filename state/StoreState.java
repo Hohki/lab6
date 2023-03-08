@@ -27,6 +27,7 @@ public class StoreState extends State {
 	private UniformRandomStream nextPlock;
 	private UniformRandomStream nextPay;
 	private Kunder currentEvent;
+	private boolean store;
 	
 	public StoreState(int numberOfKassor, int maxCustomer, double closeTime,
 					  double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed) {
@@ -52,8 +53,46 @@ public class StoreState extends State {
 		this.freeKassor = numberOfKassor;
 		this.missedCashierTime = 0.0d;
 		this.queueTime = 0;
+		this.store = false;
 		
 	}
+	
+	public int GetNumberOfKassor() {
+		return this.numberOfKassor;
+	}
+	
+	public int GetMaxCustomer() {
+		return this.maxCustomer;
+	}
+	
+	public double GetLambda() {
+		return this.lambda;
+	}
+	
+	public double GetPlockMin() {
+		return this.pickMin;
+	}
+	
+	public double GetPlockMax() {
+		return this.pickMax;
+	}
+	
+	public double GetPayMin() {
+		return this.payMin;
+	}
+	
+	public double GetPayMax() {
+		return this.payMax;
+	}
+	
+	public long GetSeed() {
+		return this.seed;
+	}
+	
+	public boolean GetStore() {
+		return this.store;
+	}
+	
 	public void MakeCustomer() {
 		this.CreateCustomer.CreateCustomers();
 	}
