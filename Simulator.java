@@ -27,9 +27,4 @@ public class Simulator {
 		
 		}
 	}
-	
-public class Simulator {
-
-
-}
 
