@@ -1,9 +1,6 @@
 package lab6.state;
 
-import java.util.ArrayList;
-
 public class StoreState extends State {
-	ArrayList<Kunder> customers = new ArrayList<Kunder>();
 	private Kassakö Kassakö;
 	private CreateCustomer CreateCustomer;
 	
@@ -97,26 +94,6 @@ public class StoreState extends State {
 		return this.maxCustomer;
 	}
 	
-	public double GetLambda() {
-		return this.lambda;
-	}
-	
-	public double GetPlockMin() {
-		return this.pickMin;
-	}
-	
-	public double GetPlockMax() {
-		return this.pickMax;
-	}
-	
-	public double GetPayMin() {
-		return this.payMin;
-	}
-	
-	public double GetPayMax() {
-		return this.payMax;
-	}
-	
 	public long GetSeed() {
 		return this.seed;
 	}
@@ -125,24 +102,12 @@ public class StoreState extends State {
 		return this.store;
 	}
 	
-	public void MakeCustomer() {
-		this.CreateCustomer.CreateCustomers();
+	public void SetStoreState(boolean state) {
+		this.store = state;
 	}
 	
 	public Kassakö GetQueue() {
 		return this.Kassakö;
-	}
-	
-	public void AddToQueue(Kunder kund) {
-		((Kassakö) this.Kassakö).add(kund);
-	}
-	
-	public void RemoveFromQueue() {
-		((lab6.state.Kassakö) this.Kassakö).removeFirst();
-	}
-	
-	public int GetLength() {
-		return ((Kassakö) this.Kassakö).size();
 	}
 	
 	public double GetNextArrival() {

@@ -2,19 +2,24 @@ package lab6.state;
 
 import java.util.Observable;
 
+import lab6.event.Event;
+
 public class State extends Observable {
-	private int simState = 0;
 	public boolean simStop = false;
 	protected double simTime;
 	
 	public State() {
 		this.simStop = false;
-		this.simTime = 0.0d;
 	}
 	
-	public int addTime(int time) {
-		simState = simState + time;
-		return simState;
+	public void SetSimTime(double time) {
+		this.simTime = time;
+	}
+	
+	public void notify(Event event) {
+		this.SetSimTime(event.GetTime()); // Ska finnas en GetTime metod som returnerar tiden då event genomförs
+		this.setChanged();
+		this.notifyObservers(event);
 	}
 	
 	public double CurrentTime() {
@@ -25,9 +30,6 @@ public class State extends Observable {
 		simStop = true;
 	}
 	
-	public void callObservers() {
-		setChanged();
-		notifyObservers();
-	}
+	
 
 }
