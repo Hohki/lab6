@@ -23,7 +23,7 @@ public class Simulator {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
 				while (!state.simStop && !queue.isEmpty()) {
 					Event currentEvent = queue.getFirst();
-					currentEvent.effect();
+					currentEvent.effect(this.state);
 				}
 				System.out.print("The simulation is finished");
 				

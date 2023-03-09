@@ -6,7 +6,7 @@ public class Pair {
     private Kunder kund;
     private double tid;
 
-    /*Constructs en object av som består av tid och kund
+    /*Constructs en object som består av tid och kund
     * */
     public Pair(Kunder kund, double tid) {
         this.kund = kund;
