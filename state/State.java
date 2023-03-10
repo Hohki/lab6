@@ -17,7 +17,7 @@ public class State extends Observable {
 	}
 	
 	public void notify(Event event) {
-		this.SetSimTime(event.getTime()); // Ska finnas en GetTime metod som returnerar tiden då event genomförs
+		this.SetSimTime(event.tid()); 
 		this.setChanged();
 		this.notifyObservers(event);
 	}
