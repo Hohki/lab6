@@ -1,14 +1,12 @@
 package lab6.state;
 
 public class Kunder {
-	public int customerNumber;
-	private Object customerState;
+	private int customerNumber;
 	
-	public Kunder (int customerNumber, Object customerState) {
-		this.customerNumber = customerNumber;
-		this.customerState = customerState;
+	public Kunder(int number) {
+		this.customerNumber = number;
 	}
-	
+
 	public int getID() {
 		return this.customerNumber;
 	}

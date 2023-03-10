@@ -2,7 +2,7 @@ package lab6.state;
 
 public class StoreState extends State {
 	private Kassakö Kassakö;
-	private CreateCustomer CreateCustomer;
+	private CustomerFactory createCustomer;
 	
 	final int numberOfKassor;
 	final int maxCustomer;
@@ -30,7 +30,7 @@ public class StoreState extends State {
 	public StoreState(int numberOfKassor, int maxCustomer, double closeTime,
 					  double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed) {
 		this.Kassakö = new Kassakö();
-		this.CreateCustomer = new CreateCustomer();
+		this.createCustomer = new CustomerFactory();
 		this.nextArrival = new ExponentialRandomStream(lambda, seed);
 		this.nextPlock = new UniformRandomStream(pickMin, pickMax, seed);
 		this.nextPay = new UniformRandomStream(payMin, payMax, seed);
@@ -52,6 +52,26 @@ public class StoreState extends State {
 		this.queueTime = 0;
 		this.store = false;
 		
+	}
+	
+	public double GetLambda() {
+		return this.lambda;
+	}
+	
+	public double GetPlockMax() {
+		return this.pickMax;
+	}
+	
+	public double GetPlockMin() {
+		return this.pickMin;
+	}
+	
+	public double GetPayMax() {
+		return this.payMax;
+	}
+	
+	public double GetPayMin() {
+		return this.payMin;
 	}
 	
 	public int GetNumberOfCustomers() {
