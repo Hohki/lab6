@@ -11,6 +11,7 @@ public class View implements Observer {
 		this.state = state;
 	}
 	
+	@Override
 	public void update (Observable obj, Object arg) {
 		
 	}

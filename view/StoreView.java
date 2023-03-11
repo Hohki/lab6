@@ -49,6 +49,16 @@ public class StoreView extends View {
 		}
 		
 		public void EndPrint() {
+			System.out.println("RESULTAT");
+			System.out.println("========");
+			System.out.println("1) Av " + state.GetNumberOfCustomers() + " handlade " + 
+							   state.NumberOfPayedCustomers() + " medan " + state.MissedCustomers() + " missades.");
+			System.out.println("2) Total tid " + state.GetNumberOfKassor() + " kassor varit lediga: " + state.GetFreeKassorTime() + " te.");
+			System.out.println("Genomsnittlig ledig kassatid: " + state.GetFreeKassorTime()/state.GetNumberOfKassor() + 
+							   " te (dvs " + (state.GetFreeKassorTime()/state.GetNumberOfKassor()) / state.getLastPay() * 100 + 
+							   "% av tiden från öppning tills sista kunden betalat).");
+			System.out.println("3) Total tid " + state.NumberOfQueuedCustomers() + " tvingats köa: " + state.GetQueueTime() + " te.");
+			System.out.println("Genomsnittlig kötid: " + state.GetQueueTime() / state.NumberOfQueuedCustomers() + " te.");
 			
 		}
 }

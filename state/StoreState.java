@@ -1,5 +1,8 @@
 package lab6.state;
 
+import lab6.event.*;
+
+
 public class StoreState extends State {
 	private Kassakö Kassakö;
 	private CustomerFactory createCustomer;
@@ -21,6 +24,7 @@ public class StoreState extends State {
 	private int freeKassor;
 	private double freeKassorTime;
 	private double queueTime;
+	private double lastPay;
 	private ExponentialRandomStream nextArrival;
 	private UniformRandomStream nextPlock;
 	private UniformRandomStream nextPay;
@@ -45,6 +49,7 @@ public class StoreState extends State {
 		this.payMax = payMax;
 		this.seed = seed;
 		
+		this.lastPay = 0.0d;
 		this.customer = 0;
 		this.payedCustomers = 0;
 		this.missedCustomers = 0;
@@ -80,10 +85,6 @@ public class StoreState extends State {
 	
 	public void IncreaseNumberOfCustomer() {
 		this.customer = this.customer + 1;
-	}
-	
-	public void DecreaseNumberOfCustomers() {
-		this.customer = this.customer - 1;
 	}
 	
 	public int NumberOfPayedCustomers() {
@@ -177,7 +178,7 @@ public class StoreState extends State {
 		return this.queueTime;
 	}
 	
-	public void AddToQueueTime(double queueTime) {
+	public void IncreaseQueueTime(double queueTime) {
 		this.queueTime = this.queueTime + queueTime;
 	}
 	
@@ -199,5 +200,27 @@ public class StoreState extends State {
 	
 	public void SetCurrentEvent(Kunder currentEvent) {
 		this.currentEvent = currentEvent;
+	}
+	
+	public double getLastPay() {
+		return this.lastPay;
+	}
+	
+	@Override
+	public void notify(Event event) {
+		if (event instanceof Betalningshändelse) {
+			this.lastPay = event.tid();
+		}
+		
+		if (!(event instanceof Ankomsthändelse && this.store) && !(event instanceof Stopphändelse)) {
+			double time = event.tid() - this.CurrentTime();
+			
+			double queueTime = this.GetQueue().size() * time;
+			double freeKassaTid = this.FreeKassor() * time;
+			
+			this.IncreaseQueueTime(queueTime);
+			this.IncreaseFreeKassorTime(freeKassaTid);
+		}
+		super.notify(event);
 	}
 }

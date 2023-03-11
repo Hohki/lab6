@@ -5,7 +5,7 @@ import java.util.Observable;
 import lab6.event.Event;
 
 public class State extends Observable {
-	public boolean simStop = false;
+	public boolean simStop;
 	protected double simTime;
 	
 	public State() {
