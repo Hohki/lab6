@@ -21,9 +21,11 @@ public class Simulator {
 	
 	public void Run () {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
+				Starthändelse starthändelse = new Starthändelse();
+				starthändelse.effect();
 				while (!state.simStop) {
 					Event currentEvent = event.getEventQueue().getFirst();
-					currentEvent.effect(this.state);
+					currentEvent.effect();
 				}
 				System.out.print("The simulation is finished");
 	}

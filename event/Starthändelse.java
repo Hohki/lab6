@@ -5,13 +5,12 @@ import lab6.state.StoreState;
 import lab6.tools.Pair;
 
 public class Starthändelse extends Event{
-
-	public Starthändelse(State state, String str) {
-		super(state, str);
+	public Starthändelse() {
+		super("Start");
 	}
 
 	@Override
-	public void effect(StoreState state) {
-		
+	public void effect() {
+		eventQueue.addEvent(new Starthändelse());
 	}
 }

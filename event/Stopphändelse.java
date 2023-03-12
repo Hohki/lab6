@@ -6,12 +6,12 @@ import lab6.tools.Pair;
 
 public class Stopphändelse extends Event{
 
-	public Stopphändelse(State state, String str, Pair pair) {
-		super(state, str, pair);
+	public Stopphändelse(String str, Pair pair) {
+		super(str, pair);
 	}
 
 	@Override
-	public void effect(StoreState state) {
+	public void effect() {
 		state.stopSim();
 	}
 

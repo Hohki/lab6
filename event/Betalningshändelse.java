@@ -6,12 +6,12 @@ import lab6.tools.Pair;
 
 public class Betalningshändelse extends Event{
 
-	public Betalningshändelse(State state, String str, Pair pair) {
-		super(state, str, pair);
+	public Betalningshändelse(String str, Pair pair) {
+		super(str, pair);
 	}
 
 	@Override
-	public void effect(StoreState state) {
+	public void effect() {
 		
 	}
 
