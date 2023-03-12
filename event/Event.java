@@ -9,7 +9,7 @@ public abstract class Event {
 	String str;
 	Pair pair;
 	static EventQueue eventQueue = new EventQueue();
-	public Event(State state, String str, Pair pair, EventQueue eventQueue) {
+	public Event(State state, String str, Pair pair) {
 		this.state = state;
 		this.pair = pair;
 		this.str = str;

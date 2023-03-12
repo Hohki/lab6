@@ -5,8 +5,8 @@ import lab6.tools.Pair;
 
 public class Betalningshändelse extends Event{
 
-	public Betalningshändelse(State state, String str, Pair pair, EventQueue queue) {
-		super(state, str, pair, queue);
+	public Betalningshändelse(State state, String str, Pair pair) {
+		super(state, str, pair);
 	}
 
 	@Override

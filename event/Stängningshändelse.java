@@ -5,8 +5,8 @@ import lab6.tools.Pair;
 
 public class Stängningshändelse extends Event {
 
-	public Stängningshändelse(State state, String str, Pair pair, EventQueue queue) {
-		super(state, str, pair, queue);
+	public Stängningshändelse(State state, String str, Pair pair) {
+		super(state, str, pair);
 	
 	}
 
