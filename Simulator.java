@@ -6,17 +6,15 @@ import lab6.event.Event;
 import lab6.state.State;
 
 public class Simulator {
-	
+
 	EventQueue queue;
 	Event event;
 	State state;
-	
-	
+
+
 	//Constructs and runs the simulation.
-	public Simulator(State state, EventQueue queue) {
-		
+	public Simulator(State state) {
 		this.state = state;
-		this.queue = queue;
 	}
 	
 	public void Run () {
