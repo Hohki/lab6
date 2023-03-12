@@ -8,6 +8,7 @@ import lab6.view.View;
 
 public class Simulator {
 	private State state;
+	Event event;
 	private View view;
 	//Constructs and runs the simulation.
 	public Simulator(State state, View view) {
@@ -18,8 +19,8 @@ public class Simulator {
 	
 	public void Run () {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
-				while (!state.simStop && !state.eventQueue().isEmpty()) {
-					Event currentEvent = state.eventQueue().getFirst();
+				while (!state.simStop) {
+					Event currentEvent = event.getEventQueue().getFirst();
 					currentEvent.effect(this.state);
 				}
 				System.out.print("The simulation is finished");
