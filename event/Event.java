@@ -5,10 +5,12 @@ import lab6.state.State;
 import lab6.tools.Pair;
 
 public abstract class Event {
+	String str;
 	Pair pair;
-	EventQueue eventQueue = new EventQueue();
-	public Event(Pair pair) {
+	static EventQueue eventQueue = new EventQueue();
+	public Event(String str, Pair pair) {
 		this.pair = pair;
+		this.str = str;
 	}
 
 	public abstract void effect(State state);

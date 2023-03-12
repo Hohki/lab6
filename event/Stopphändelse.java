@@ -6,7 +6,7 @@ import lab6.tools.Pair;
 public class Stopphändelse extends Event{
 
 	public Stopphändelse(Pair pair) {
-		super(pair);
+		super("Stopp", pair);
 	}
 
 	@Override
