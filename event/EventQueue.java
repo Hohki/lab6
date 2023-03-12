@@ -7,6 +7,9 @@ public class EventQueue {
 
     public void addEvent(Event event) {
         this.eventQueue.add(event);
+    }
+
+    public void sortEventQueue() {
         /*Sorterar listan efter man har adderat en event
         så att den första event i listan är de som kommer att
         hända tidigast

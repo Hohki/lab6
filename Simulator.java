@@ -23,7 +23,7 @@ public class Simulator {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
 				Starthändelse starthändelse = new Starthändelse();
 				starthändelse.effect();
-				while (!state.simStop) {
+				while (!state.simStop && !starthändelse.getEventQueue().isEmpty()) {
 					Event currentEvent = event.getEventQueue().getFirst();
 					currentEvent.effect();
 				}
