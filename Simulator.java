@@ -3,7 +3,9 @@ package lab6;
 
 import lab6.event.EventQueue;
 import lab6.event.Event;
+import lab6.event.Starthändelse;
 import lab6.state.State;
+import lab6.state.StoreState;
 import lab6.view.View;
 
 public class Simulator {
@@ -11,7 +13,7 @@ public class Simulator {
 	Event event;
 	private View view;
 	//Constructs and runs the simulation.
-	public Simulator(State state, View view) {
+	public Simulator(StoreState state, View view) {
 		this.state = state;
 		this.view = view;
 		state.addObserver(view);

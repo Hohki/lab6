@@ -16,6 +16,11 @@ public abstract class Event {
 		this.str = str;
 	}
 
+	public Event(State state, String str) {
+		this.state = state;
+		this.str = str;
+	}
+
 	public abstract void effect(State state);
 
 	public double tid() {
