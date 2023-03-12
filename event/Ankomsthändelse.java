@@ -13,7 +13,7 @@ public class Ankomsthändelse extends Event {
 	}
 
 	@Override
-	public void effect(State state) {
+	public void effect(StoreState state) {
 		if (this.state.GetStore()) {
 			double nextArrival = this.state.GetNextArrival(pair.tid());
 			CustomerFactory kund = new CustomerFactory();

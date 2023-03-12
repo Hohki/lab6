@@ -9,7 +9,7 @@ import lab6.state.StoreState;
 import lab6.view.View;
 
 public class Simulator {
-	private State state;
+	private StoreState state;
 	Event event;
 	private View view;
 	//Constructs and runs the simulation.

@@ -2,26 +2,27 @@ package lab6.event;
 
 import lab6.state.Kunder;
 import lab6.state.State;
+import lab6.state.StoreState;
 import lab6.tools.Pair;
 
 public abstract class Event {
-	protected State state;
+	protected StoreState state;
 	String str;
 	Pair pair;
 	static EventQueue eventQueue = new EventQueue();
 
-	public Event(State state, String str, Pair pair) {
+	public Event(StoreState state, String str, Pair pair) {
 		this.state = state;
 		this.pair = pair;
 		this.str = str;
 	}
 
-	public Event(State state, String str) {
+	public Event(StoreState state, String str) {
 		this.state = state;
 		this.str = str;
 	}
 
-	public abstract void effect(State state);
+	public abstract void effect(StoreState state);
 
 	public double tid() {
 		return this.pair.tid();

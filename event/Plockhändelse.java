@@ -12,7 +12,7 @@ public class Plockhändelse extends Event {
 	 }
 
 	@Override
-	public void effect(State state) {
+	public void effect(StoreState state) {
 		if (this.state.FreeKassor() > 0) {
 			this.state.DecreaseFreeKassor();
 			double nextPay = this.state.GetNextPay(this.pair.tid());
