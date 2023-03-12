@@ -9,6 +9,7 @@ public abstract class Event {
 	String str;
 	Pair pair;
 	static EventQueue eventQueue = new EventQueue();
+
 	public Event(State state, String str, Pair pair) {
 		this.state = state;
 		this.pair = pair;
@@ -23,5 +24,9 @@ public abstract class Event {
 
 	public Kunder kund() {
 		return this.pair.kund();
+	}
+
+	public EventQueue getEventQueue() {
+		return eventQueue;
 	}
 }

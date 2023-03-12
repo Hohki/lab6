@@ -7,12 +7,10 @@ public class Starthändelse extends Event{
 
 	public Starthändelse(State state, String str, Pair pair) {
 		super(state, str, pair);
-		
 	}
 
 	@Override
 	public void effect(State state) {
 		
 	}
-
 }
