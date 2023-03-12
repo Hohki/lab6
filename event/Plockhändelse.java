@@ -5,10 +5,9 @@ import lab6.tools.Pair;
 
 public class Plockhändelse extends Event {
 	Kassakö kassa = new Kassakö();
-	kassa.add();
 
-	 public Plockhändelse(Pair pair) {
-		 super("Plock", pair);
+	 public Plockhändelse(State state, String str, Pair pair, EventQueue queue) {
+		 super(state, "Plock", pair, queue);
 	 }
 
 	@Override

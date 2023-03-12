@@ -131,16 +131,16 @@ public class StoreState extends State {
 		return this.Kassakö;
 	}
 	
-	public double GetNextArrival() {
-		return this.nextArrival.next();
+	public double GetNextArrival(double time) {
+		return this.nextArrival.next() + time;
 	}
 	
-	public double GetNextPlock() {
-		return this.nextPlock.next();
+	public double GetNextPlock(double time) {
+		return this.nextPlock.next() + time;
 	}
 	
-	public double GetNextPay() {
-		return this.nextPay.next();
+	public double GetNextPay(double time) {
+		return this.nextPay.next() + time;
 	}
 	
 	public int NumberOfCustomers() {

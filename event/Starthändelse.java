@@ -1,5 +1,18 @@
 package lab6.event;
 
-public class Starthändelse {
+import lab6.state.State;
+import lab6.tools.Pair;
+
+public class Starthändelse extends Event{
+
+	public Starthändelse(State state, String str, Pair pair, EventQueue queue) {
+		super(state, str, pair, queue);
+		
+	}
+
+	@Override
+	public void effect(State state) {
+		
+	}
 
 }
