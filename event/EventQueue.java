@@ -38,6 +38,15 @@ public class EventQueue {
         return tmpEvent;
     }
 
+    @Override
+    public String toString() {
+        String tmp = "";
+        for (int i = 0; i < this.eventQueue.size(); i++) {
+            tmp = tmp + ", " + "(" + this.eventQueue.get(i).tid + ")";
+        }
+        return tmp;
+    }
+
     public boolean isEmpty() {
         return this.eventQueue.isEmpty();
     }

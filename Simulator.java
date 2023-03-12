@@ -10,7 +10,7 @@ import lab6.view.View;
 
 public class Simulator {
 	private StoreState state;
-	Event event;
+	private
 	private View view;
 	//Constructs and runs the simulation.
 	public Simulator(StoreState state, View view) {
@@ -21,12 +21,12 @@ public class Simulator {
 	
 	public void Run () {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
-				Starthändelse starthändelse = new Starthändelse();
+				Starthändelse starthändelse = new Starthändelse(0.0);
 				starthändelse.effect();
-				while (!state.simStop && !starthändelse.getEventQueue().isEmpty()) {
+/*				while (!state.simStop) {
 					Event currentEvent = event.getEventQueue().getFirst();
 					currentEvent.effect();
-				}
+				}*/
 				System.out.print("The simulation is finished");
 	}
 }

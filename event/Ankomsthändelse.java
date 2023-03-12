@@ -4,30 +4,27 @@ import lab6.state.*;
 import lab6.tools.Pair;
 
 public class Ankomsthändelse extends Event {
-	private StoreState state;
-	private String str;
-	private Pair pair;
+	private double tid;
+	private Kunder kund;
 
-	public Ankomsthändelse(String str, Pair pair) {
-		super(str, pair);
-		this.str = str;
-		this.pair = pair;
+	public Ankomsthändelse(double tid, Kunder kund) {
+		super("Ankomst", tid, kund);
+		this.tid = tid;
+		this.kund = kund;
 	}
 
 	@Override
 	public void effect() {
 		if (state.GetStore()) {
-			double nextArrival = state.GetNextArrival(pair.tid());
+			double nextArrival = state.GetNextArrival(this.tid());
 			CustomerFactory kund = new CustomerFactory();
 			Kunder newKund = kund.CreateCustomers();
-			pair = new Pair(newKund, nextArrival);
-			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(str, pair);
+			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 			eventQueue.addEvent(ankomsthändelse);
 			if (state.NumberOfCustomers() < state.GetMaxCustomer()) {
 				state.IncreaseCustomers();
-				double pickTime = state.GetNextPlock(pair.tid());
-				Pair nextPlock = new Pair(pair.kund(), pickTime);
-				Plockhändelse plockhändelse = new Plockhändelse("Plock", nextPlock);
+				double pickTime = state.GetNextPlock(this.tid());
+				Plockhändelse plockhändelse = new Plockhändelse(pickTime, this.kund);
 				eventQueue.addEvent(plockhändelse);
 			}
 			else {

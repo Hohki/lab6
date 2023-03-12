@@ -1,16 +1,24 @@
 package lab6.event;
 
+import lab6.state.CustomerFactory;
+import lab6.state.Kunder;
 import lab6.state.State;
 import lab6.state.StoreState;
 import lab6.tools.Pair;
 
 public class Starthändelse extends Event{
-	public Starthändelse() {
-		super("Start");
+	public Starthändelse(double tid) {
+		super("Start", tid);
 	}
 
 	@Override
 	public void effect() {
-		eventQueue.addEvent(new Starthändelse());
+		eventQueue.addEvent(this);
+		double nextArrival = state.GetNextArrival(this.tid());
+		CustomerFactory kund = new CustomerFactory();
+		Kunder newKund = kund.CreateCustomers();
+		Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
+		eventQueue.addEvent(ankomsthändelse);
+		System.out.println(eventQueue.toString());
 	}
 }

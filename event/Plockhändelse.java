@@ -4,23 +4,24 @@ import lab6.state.*;
 import lab6.tools.Pair;
 
 public class Plockhändelse extends Event {
-    private Pair pair;
+    private double tid;
+    private Kunder kund;
 
-    public Plockhändelse(String str, Pair pair) {
-        super("Plock", pair);
-        this.pair = pair;
+    public Plockhändelse(double tid, Kunder kund) {
+        super("Plock", tid, kund);
+        this.tid = tid;
+        this.kund = kund;
     }
 
     @Override
     public void effect() {
         if (state.FreeKassor() > 0) {
             state.DecreaseFreeKassor();
-            double nextPay = this.state.GetNextPay(this.pair.tid());
-            Pair newPay = new Pair(this.pair.kund(), nextPay);
-            Betalningshändelse betalningshändelse = new Betalningshändelse("Betal", newPay);
+            double nextPay = this.state.GetNextPay(this.tid());
+            Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, this.kund);
             eventQueue.addEvent(betalningshändelse);
         } else {
-            state.GetQueue().add(pair.kund());
+            state.GetQueue().add(kund());
             state.IncreaseNumberOfQueuedCustomers();
         }
     }
