@@ -10,6 +10,7 @@ public class StoreView extends View {
 	
 	public StoreView(StoreState state) {
 		super(state);
+		state.addObserver(this);
 		this.state = state;
 		Parameters();
 	}
