@@ -13,7 +13,6 @@ public class StoreView extends View {
         super(state);
         this.state = state;
         Parameters();
-        this.state.addObserver(this);
     }
 
     @Override

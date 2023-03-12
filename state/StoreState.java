@@ -61,7 +61,9 @@ public class StoreState extends State {
 
     }
 
-
+    public double GetCloseTime() {
+        return this.closeTime;
+    }
     public double GetLambda() {
         return this.lambda;
     }
@@ -212,6 +214,9 @@ public class StoreState extends State {
     public boolean getALlowView() {
         return this.allowView;
     }
+
+
+
 
     @Override
     public void notify(Event event) {
