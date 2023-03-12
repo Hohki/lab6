@@ -6,8 +6,6 @@ import lab6.event.Event;
 import lab6.state.State;
 
 public class Simulator {
-
-	EventQueue queue;
 	Event event;
 	State state;
 
@@ -19,14 +17,12 @@ public class Simulator {
 	
 	public void Run () {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
-				while (!state.simStop && !queue.isEmpty()) {
-					Event currentEvent = queue.getFirst();
+				event.getEventQueue().addEvent(Event Starthändelse);
+				while (!state.simStop && !event.getEventQueue().isEmpty()) {
+					Event currentEvent = event.getEventQueue().getFirst();
 					currentEvent.effect(this.state);
 				}
 				System.out.print("The simulation is finished");
-				
-		
 	}
-	
 }
 

@@ -18,7 +18,7 @@ public class Plockhändelse extends Event {
 			double nextPay = this.state.GetNextPay(this.pair.tid());
 			Pair newPay = new Pair(this.pair.kund(), nextPay);
 			Betalningshändelse betalningshändelse = new Betalningshändelse(this.state, "Betal", newPay);
-			Event.eventQueue.addEvent(betalningshändelse);
+			eventQueue.addEvent(betalningshändelse);
 		}
 		else {
 			this.state.GetQueue().add(pair.kund());

@@ -3,11 +3,12 @@ package lab6.state;
 import java.util.Observable;
 
 import lab6.event.Event;
+import lab6.event.EventQueue;
 
 public class State extends Observable {
 	public boolean simStop;
 	protected double simTime;
-	
+
 	public State() {
 		this.simStop = false;
 	}
