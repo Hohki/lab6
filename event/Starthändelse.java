@@ -5,8 +5,8 @@ import lab6.tools.Pair;
 
 public class Starthändelse extends Event{
 
-	public Starthändelse(State state, String str, Pair pair, EventQueue queue) {
-		super(state, str, pair, queue);
+	public Starthändelse(State state, String str, Pair pair) {
+		super(state, str, pair);
 		
 	}
 
