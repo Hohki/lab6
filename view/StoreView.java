@@ -1,14 +1,16 @@
 package lab6.view;
 
 import java.util.Observable;
-
 import lab6.event.Event;
 import lab6.event.Stopphändelse;
 import lab6.event.Stängningshändelse;
 import lab6.state.*;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class StoreView extends View {
     StoreState state;
+    private DecimalFormat df = new DecimalFormat("0.00");
 
     public StoreView(StoreState state) {
         super(state);
@@ -46,22 +48,22 @@ public class StoreView extends View {
         System.out.println();
         System.out.println("FÖRLOPP");
         System.out.println("=======");
-        System.out.println("Tid Händelse  Kund  ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
-        System.out.println("0,00 Start");
+        System.out.println("   Tid Händelse   Kund   ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
+        System.out.println("  0,00 Start");
     }
 
     public void WriteLine() {
     	if (state.CurrentEvent() instanceof Stängningshändelse) {
-    		System.out.printf("%6.2f %s %s %3s %7.2s % 4f % 4d  % 4d  % 4d  %6.2s % 4f %s%n",
+    		System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % 4.2f %5s %s %n",
                     state.CurrentTime(), state.CurrentEvent().eventName(), "---", state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
                     state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
                     state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
     	}
     	else if (state.CurrentEvent() instanceof Stopphändelse) {
-    		System.out.println(state.CurrentTime() + " Stop");
+    		System.out.println(" " + df.format(state.CurrentTime()) + " Stop");
     	}
     	else {
-    		System.out.printf("%6.2f %s %s %3s %7.2s % 4f % 4d  % 4d  % 4d  %6.2s % 4f %s%n",
+    		System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % 4.2f %5s %s %n",
                     state.CurrentTime(), state.CurrentEvent().eventName(), state.CurrentEvent().kund().getID(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
                     state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
                     state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
@@ -72,7 +74,7 @@ public class StoreView extends View {
     public void EndPrint() {
         System.out.println("RESULTAT");
         System.out.println("========");
-        System.out.println("1) Av " + state.GetNumberOfCustomers() + " handlade " +
+        System.out.println("1) Av " + (state.NumberOfPayedCustomers() + state.MissedCustomers()) + " handlade " +
                 state.NumberOfPayedCustomers() + " medan " + state.MissedCustomers() + " missades.");
         System.out.println("2) Total tid " + state.GetNumberOfKassor() + " kassor varit lediga: " + state.GetFreeKassorTime() + " te.");
         System.out.println("Genomsnittlig ledig kassatid: " + state.GetFreeKassorTime() / state.GetNumberOfKassor() +

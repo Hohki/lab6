@@ -210,5 +210,15 @@ public class StoreState extends State {
     public void notify(Event event) {
         setChanged();
         notifyObservers(event);
+        
+        if (!(event instanceof Ankomsthändelse && !this.store) && !(event instanceof Stopphändelse)) {
+			double time = event.tid() - this.CurrentTime();
+			
+			double queueTime = this.GetQueue().size() * time;
+			double freeKassaTid = this.FreeKassor() * time;
+			
+			this.IncreaseQueueTime(queueTime);
+			this.IncreaseFreeKassorTime(freeKassaTid);
+		}
     }
 }
