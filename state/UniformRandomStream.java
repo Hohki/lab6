@@ -7,16 +7,21 @@
 package lab6.state;
 
 import java.util.Random;
-
+/**
+ * 
+ * Calculates Plock and Pay times.
+ *
+ */
 public class UniformRandomStream {
 
 	private Random rand;
 	private double lower, width;
 
 	/**
-	 * Konstruktor för UniformRandomStream.
-	 * 
-	 * @param lower, upper seed
+	 * Constructor for UniformRandomStream.
+	 * @param lower lower
+	 * @param upper upper
+	 * @param seed seed
 	 */
 	public UniformRandomStream(double lower, double upper, long seed) {
 		rand = new Random(seed);
@@ -25,9 +30,9 @@ public class UniformRandomStream {
 	}
 
 	/**
-	 * Konstruktor för UniformRandomStream.
-	 * 
-	 * @param lower, upper
+	 * Constructor for UniformRandomStream.
+	 * @param lower lower
+	 * @param upper upper
 	 */
 
 	public UniformRandomStream(double lower, double upper) {
@@ -37,8 +42,7 @@ public class UniformRandomStream {
 	}
 
 	/**
-	 * Returnerar nästa tal.
-	 *
+	 * Returns the next calculated number.
 	 * @return lower+rand.nextDouble()*width
 	 */
 

@@ -7,18 +7,20 @@
 package lab6.state;
 
 import java.util.Random;
-
+/**
+ * 
+ * Calculates the Ankomst times.
+ *
+ */
 public class ExponentialRandomStream {
 
 	private Random rand;
 	private double lambda;
 
 	/**
-	 * Konstruktor för ExpontentialRandomStream.
-	 * 
-	 * @param lambda
-	 * @param seed
-	 * @return Nothing
+	 * Constructor for ExpontentialRandomStream.
+	 * @param lambda lambda
+	 * @param seed seed
 	 **/
 	public ExponentialRandomStream(double lambda, long seed) {
 		rand = new Random(seed);
@@ -26,9 +28,8 @@ public class ExponentialRandomStream {
 	}
 
 	/**
-	 * Konstruktor för ExponentialRandomStream.
-	 * 
-	 * @param lambda
+	 * Constructor for ExponentialRandomStream.
+	 * @param lambda lambda
 	 **/
 
 	public ExponentialRandomStream(double lambda) {
@@ -37,8 +38,7 @@ public class ExponentialRandomStream {
 	}
 
 	/**
-	 * Returnerar nästa tal.
-	 *
+	 * Returns the next random number.
 	 * @return -Math.log(rand.nextDouble())/lambda
 	 **/
 

@@ -8,7 +8,11 @@ package lab6.state;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
-
+/**
+ * 
+ * Makes a Queue for the Kassa.
+ *
+ */
 public class KassaQueue {
 
 	private int maxsize = 0;
@@ -16,9 +20,8 @@ public class KassaQueue {
 	private ArrayList<Kunder> queue = new ArrayList<Kunder>();
 
 	/**
-	 * Lägger till en Kund i Kassakö.
-	 * 
-	 * @param arg0
+	 * Adds a Customer to the KassaQueue.
+	 * @param arg0 arg0
 	 */
 
 	public void add(Kunder arg0) {
@@ -29,8 +32,7 @@ public class KassaQueue {
 	}
 
 	/**
-	 * Returnerar kunden längs fram i Kassakö
-	 *
+	 * Returns the Customer in the first spot.
 	 * @return get(0)
 	 */
 
@@ -43,8 +45,7 @@ public class KassaQueue {
 	}
 
 	/**
-	 * Returnerar om Kassakö är tom eller inte.
-	 *
+	 * Returns if the KassaQueue is empty or not.
 	 * @return isEmpty()
 	 */
 
@@ -53,8 +54,7 @@ public class KassaQueue {
 	}
 
 	/**
-	 * Returnerar största storleken av Kassakö.
-	 *
+	 * Returns the biggest size of KassaQueue.
 	 * @return maxsize
 	 **/
 	public int maxSize() {
@@ -62,7 +62,7 @@ public class KassaQueue {
 	}
 
 	/**
-	 * Tar bort första Kunden i Kassakö
+	 * Removes the first Customer in KassaQueue.
 	 *
 	 **/
 
@@ -76,8 +76,7 @@ public class KassaQueue {
 	}
 
 	/**
-	 * Returnerar storleken på Kassakö.
-	 *
+	 * Returns the size of the KassaQueue.
 	 * @return size()
 	 **/
 
@@ -86,8 +85,7 @@ public class KassaQueue {
 	}
 
 	/**
-	 * Returnerar Kassakö som en String.
-	 *
+	 * Returns KassaQueue as a String.
 	 * @return s
 	 **/
 

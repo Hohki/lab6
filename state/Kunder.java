@@ -5,21 +5,24 @@
  * */
 
 package lab6.state;
-
+/**
+ * 
+ * Class that makes the customerNumber.
+ *
+ */
 public class Kunder {
 	private int customerNumber;
 
 	/**
-	 * Konstruktor för Kunder.
-	 * 
-	 * @param number
+	 * Constructor for Kunder.
+	 * @param number number
 	 */
 	public Kunder(int number) {
 		this.customerNumber = number;
 	}
 
 	/**
-	 * Returnerar kundnummret.
+	 * Returns the customerNumber.
 	 *
 	 * @return customerNumber
 	 */

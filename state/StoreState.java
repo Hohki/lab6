@@ -39,8 +39,7 @@ public class StoreState extends State {
 	final double closeTime;
 
 	/**
-	 * Konstruktor för StoreState.
-	 * 
+	 * constructor for StoreState.
 	 * @param lambda lambda
 	 * @param pickMin pickMin
 	 * @param pickMax pickMax
@@ -79,7 +78,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för lambda.
+	 * Getter for lambda.
 	 * @return lambda
 	 */
 	public double GetLambda() {
@@ -87,7 +86,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för PlockMax.
+	 * Getter for PlockMax.
 	 * @return pickMax
 	 */
 
@@ -96,7 +95,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för PlockMin.
+	 * Getter for PlockMin.
 	 * @return pickMin
 	 */
 
@@ -105,7 +104,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för PayMax.
+	 * Getter for PayMax.
 	 * @return payMax
 	 */
 
@@ -114,7 +113,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för PayMin.
+	 * Getter for PayMin.
 	 * @return payMin
 	 */
 
@@ -123,7 +122,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för antal kunder.
+	 * Getter for number of customers.
 	 * @return customer
 	 **/
 
@@ -132,7 +131,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Lägger till en till antal kunder.
+	 * Adds 1 to number of customers.
 	 */
 
 	public void IncreaseNumberOfCustomer() {
@@ -140,7 +139,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för antal betalda kunder.
+	 * Getter for number of payed customers.
 	 * @return payedCustomers
 	 */
 
@@ -149,7 +148,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Lägger till en till betalade kunder.
+	 * Adds 1 to number of payed customers.
 	 */
 
 	public void IncreaseNumberOfPayedCustomers() {
@@ -157,7 +156,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för antal kunder i kön.
+	 * Getter for number of customers in the Queue.
 	 * @return queuedCustomers
 	 */
 
@@ -166,7 +165,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Lägger till en kund i antal i kö.
+	 * Adds 1 to number of customers in queue.
 	 */
 
 	public void IncreaseNumberOfQueuedCustomers() {
@@ -174,7 +173,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för Kassakö
+	 * Getter for KassaQueue.
 	 * @return kassaQueue
 	 */
 
@@ -183,7 +182,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för antal kassor.
+	 * Getter for number of kassor.
 	 * @return numberOfKassor
 	 */
 
@@ -192,7 +191,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för max antal kunder.
+	 * Getter for max number of customers.
 	 * @return maxCustomer
 	 */
 
@@ -201,7 +200,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för seed.
+	 * Getter for seed.
 	 * @return seed
 	 */
 
@@ -210,7 +209,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för om butiken är öppen eller inte.
+	 * Getter for if the store is open or not.
 	 * @return store
 	 */
 
@@ -219,7 +218,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Setter för store.
+	 * Setter for if the store is open or not.
 	 */
 
 	public void SetStoreState(boolean state) {
@@ -227,7 +226,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för kön.
+	 * Getter för KassaQueue.
 	 * @return kassakö
 	 */
 
@@ -236,8 +235,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för nästa ankomst.
-	 * @param time
+	 * Getter för next arrival
+	 * @param time time
 	 * @return nextArrival.next() + time
 	 */
 
@@ -246,9 +245,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för nästa plock.
-	 * 
-	 * @param time
+	 * Getter for next plock.
+	 * @param time time
 	 * @return nextPlock.next() + time
 	 */
 
@@ -257,9 +255,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för nästa betalning.
-	 * 
-	 * @param time
+	 * Getter for next payment.
+	 * @param time time
 	 * @return nextPay.next() + time
 	 */
 
@@ -268,7 +265,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Lägger till till customer.
+	 * Adds 1 to number of customer.
 	 */
 
 	public void IncreaseCustomers() {
@@ -276,7 +273,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Tar bort från customer.
+	 * Removes 1 from number of customers.
 	 */
 
 	public void DecreaseCustomers() {
@@ -284,7 +281,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för missade kunder.
+	 * Getter for number of missed customers.
 	 * @return missedCustomers
 	 */
 
@@ -293,7 +290,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Lägger till kund till missade kunder.
+	 * Adds 1 to number of missed customers.
 	 */
 
 	public void IncreaseMissedCustomers() {
@@ -301,7 +298,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för tid Kassor varit lediga.
+	 * Getter for time Kassor has been free.
 	 * @return freeKassorTime
 	 **/
 
@@ -310,7 +307,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Ökar tiden kassor varit lediga.
+	 * Increases the time Kassor has been free.
+	 * @param time time
 	 **/
 
 	public void IncreaseFreeKassorTime(double time) {
@@ -318,7 +316,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för kötiden.
+	 * Getter for queue time.
 	 * @return queueTime
 	 **/
 
@@ -327,7 +325,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Ökar på kötiden.
+	 * Increases the queue time.
+	 * @param time time
 	 **/
 
 	public void IncreaseQueueTime(double queueTime) {
@@ -335,7 +334,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för antal lediga kassor.
+	 * Getter for number of free customers.
 	 * @return freeKassor
 	 **/
 
@@ -344,7 +343,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Ökar antal lediga kassor.
+	 * Increases the number of free Kassor.
 	 **/
 
 	public void IncreaseFreeKassor() {
@@ -352,7 +351,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Minskar antal lediga kassor.
+	 * Decreases the number of free customers.
 	 **/
 
 	public void DecreaseFreeKassor() {
@@ -360,7 +359,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Returnerar nuvarande event.
+	 * Returns the current event.
 	 * @return currentEvent
 	 **/
 
@@ -369,8 +368,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Sätter nuvarande event till event.
-	 * @param currentEvent
+	 * Sets currentEvent to currentEvent.
+	 * @param currentEvent currentEvent.
 	 **/
 
 	public void SetCurrentEvent(Event currentEvent) {
@@ -378,8 +377,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för sista betalning.
-
+	 * Getter for last payment.
 	 * @return lastPay
 	 **/
 
@@ -388,7 +386,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för om StoreView får skrivas ut.
+	 * Getter for if StoreView is allowed to get written out or not.
 	 * @return allowView
 	 **/
 
@@ -397,7 +395,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för sista eventet.
+	 * Getter for the time of the last event.
 	 * @return lastEvent
 	 **/
 
@@ -406,8 +404,8 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Sätter vad sista eventet är.
-	 * @param time
+	 * Sets the time of the last event to time.
+	 * @param time time
 	 **/
 
 	public void setLastEvent(double time) {
@@ -415,7 +413,7 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Getter för när butiken stänger.
+	 * Getter for when the store closes.
 	 * @return closeTime
 	 **/
 
@@ -424,9 +422,9 @@ public class StoreState extends State {
 	}
 
 	/**
-	 * Notifierar Observers. Räknar ut sista betalningen. Räknar ut kötid samt ledig
-	 * tid i kassa.
-	 * @param event
+	 * Notifies Observers. Calculates the amount of time there has been 
+	 * people in the Queues and calculates the time kassor has been free.
+	 * @param event event
 	 **/
 
 	@Override

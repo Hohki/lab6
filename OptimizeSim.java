@@ -11,26 +11,21 @@ import lab6.view.StoreView;
 import java.util.Random;
 
 /**
- * 
- * Optimerar programmet så att det blir bäst antal kassor med minst antal
- * missade kunder.
- *
+ * Optimizes the program and outputs the best number of kassor with least missed customers.
  */
-
 public class OptimizeSim {
 	/**
-	 * Kör Simulator utan att skriva ut utskrifter.
-	 * 
-	 * @param numberOfKassor
-	 * @param maxCustomer
-	 * @param lambda
-	 * @param pickMin
-	 * @param pickMax
-	 * @param payMin
-	 * @param payMax
-	 * @param seed
-	 * @param closeTime
-	 * @return missedCustomers
+	 * Runs Simulator without writing out the stuff in StoreView.
+	 * @param numberOfKassor numberOfKassor
+	 * @param maxCustomer maxCustomer
+	 * @param lambda lambda
+	 * @param pickMin pickMin
+	 * @param pickMax pickMax
+	 * @param payMin payMin
+	 * @param payMax payMax
+	 * @param seed seed
+	 * @param closeTime closeTime
+	 * @return missedCustomers missedCustomers
 	 */
 	public static int sim1(int numberOfKassor, int maxCustomer, double lambda, double pickMin, double pickMax,
 			double payMin, double payMax, long seed, double closeTime) {
@@ -44,9 +39,8 @@ public class OptimizeSim {
 	}
 
 	/**
-	 * Hittar bästa antalet kassor för ett specifikt seed.
-	 * 
-	 * @param state
+	 * Finds the best number of kassor for a specific seed.
+	 * @param state state
 	 * @return best
 	 */
 	public static int sim2(StoreState state) {
@@ -70,9 +64,8 @@ public class OptimizeSim {
 	}
 
 	/**
-	 * Hittar bästa antalet kassor för olika seed
-	 * 
-	 * @param state
+	 * Finds the best number of kassor for different seeds.
+	 * @param state state
 	 * @return hgstaMinstaAntalet
 	 */
 	public static int sim3(StoreState state) {
@@ -90,14 +83,12 @@ public class OptimizeSim {
 				antalSim++;
 			}
 		} while (antalSim <= 100);
-
 		return hgstaMinstaAntalet;
 	}
 
 	/**
-	 * Main metod som kör OptimizeSim.
-	 * 
-	 * @param args
+	 * Main method that runs OptimizeSim.
+	 * @param args args
 	 */
 	public static void main(String[] args) {
 		StoreState state = new StoreState(K.M, 2, K.L, K.LOW_COLLECTION_TIME, K.HIGH_COLLECTION_TIME, K.LOW_PAYMENT_TIME, K.HIGH_PAYMENT_TIME, K.SEED, true, K.END_TIME);

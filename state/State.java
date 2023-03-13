@@ -8,37 +8,40 @@ package lab6.state;
 
 import lab6.event.Event;
 import java.util.Observable;
-
+/**
+ * 
+ * General state.
+ *
+ */
 public class State extends Observable {
 	public boolean simStop;
 	protected double simTime;
 
 	/**
-	 * Konstruktor för State
+	 * Constructor for State
 	 */
 	public State() {
 		this.simStop = false;
 	}
 
 	/**
-	 * Sätter simTime till vad time är.
-	 * 
-	 * @param time
+	 * Sets simTime to what time is
+	 * @param time time
 	 */
 	public void SetSimTime(double time) {
 		this.simTime = time;
 	}
 
 	/**
-	 * @param event
+	 * notifies
+	 * @param event event
 	 */
 	public void notify(Event event) {
 
 	}
 
 	/**
-	 * Returnerar nuvarande tiden.
-	 *
+	 * Returns current time.
 	 * @return simTime
 	 */
 
@@ -47,8 +50,7 @@ public class State extends Observable {
 	}
 
 	/**
-	 * Sätter stopSim till true.
-	 *
+	 * Sets stopSim to true.
 	 */
 
 	public void stopSim() {
