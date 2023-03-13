@@ -7,12 +7,10 @@ import lab6.tools.Pair;
 
 public class Stängningshändelse extends Event {
 	private double tid;
-	private Kunder kund;
 
-	public Stängningshändelse(double tid, Kunder kund) {
-		super("Stängning", tid, kund);
+	public Stängningshändelse(double tid) {
+		super("Stängning", tid);
 		this.tid = tid;
-		this.kund = kund;
 	}
 
 	@Override

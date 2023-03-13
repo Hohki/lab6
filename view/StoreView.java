@@ -4,6 +4,7 @@ import java.util.Observable;
 
 import lab6.event.Event;
 import lab6.event.Stopphändelse;
+import lab6.event.Stängningshändelse;
 import lab6.state.*;
 
 public class StoreView extends View {
@@ -50,10 +51,22 @@ public class StoreView extends View {
     }
 
     public void WriteLine() {
-        System.out.printf("%6.2f %s %s %3s %7.2s % 4f % 4d  % 4d  % 4d  %6.2s    % 4f    %s%n",
-                state.CurrentTime(), state.CurrentEvent().eventName(), state.CurrentEvent().kund().getID(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
-                state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
-                state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
+    	if (state.CurrentEvent() instanceof Stängningshändelse) {
+    		System.out.printf("%6.2f %s %s %3s %7.2s % 4f % 4d  % 4d  % 4d  %6.2s % 4f %s%n",
+                    state.CurrentTime(), state.CurrentEvent().eventName(), "---", state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
+                    state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
+                    state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
+    	}
+    	else if (state.CurrentEvent() instanceof Stopphändelse) {
+    		System.out.println(state.CurrentTime() + " Stop");
+    	}
+    	else {
+    		System.out.printf("%6.2f %s %s %3s %7.2s % 4f % 4d  % 4d  % 4d  %6.2s % 4f %s%n",
+                    state.CurrentTime(), state.CurrentEvent().eventName(), state.CurrentEvent().kund().getID(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
+                    state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
+                    state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
+    	}
+        
     }
 
     public void EndPrint() {

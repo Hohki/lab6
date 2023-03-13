@@ -22,7 +22,7 @@ public class Plockhändelse extends Event {
             eventQueue.addEvent(betalningshändelse);
             state.notify(this);
         } else {
-            state.GetQueue().add(kund());
+            state.GetQueue().add(this.kund);
             state.IncreaseNumberOfQueuedCustomers();
         }
     }

@@ -1,9 +1,9 @@
 package lab6;
 
-
 import lab6.event.Ankomsthändelse;
 import lab6.event.Event;
 import lab6.event.Starthändelse;
+import lab6.event.Stängningshändelse;
 import lab6.state.StoreState;
 import lab6.view.StoreView;
 import lab6.view.View;

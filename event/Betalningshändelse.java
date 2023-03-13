@@ -19,14 +19,14 @@ public class Betalningshändelse extends Event{
 		state.IncreaseNumberOfPayedCustomers();
 		state.DecreaseCustomers();
 		//Delete current costumer? Queue times?
-		if (state.FreeKassor() > 0) {
+		if (state.GetQueue().size() == 0) {
             state.IncreaseFreeKassor();
             
         } else {
-            double nextPay = this.state.GetNextPay(this.tid);
+            double nextPay = state.GetNextPay(this.tid);
         	Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, state.GetQueue().first());				//First in queue goes to pay
             eventQueue.addEvent(betalningshändelse);																	
-            state.GetQueue().removeFirst();;																						//Decreases queue
+            state.GetQueue().removeFirst();																					//Decreases queue
             state.notify(this);
 
         }

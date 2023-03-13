@@ -19,5 +19,6 @@ public class Starthändelse extends Event{
 		Kunder newKund = new Kunder(new CustomerFactory().getNumber());
 		Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 		eventQueue.addEvent(ankomsthändelse);
+		eventQueue.addEvent(new Stängningshändelse(10.00));
 	}
 }
