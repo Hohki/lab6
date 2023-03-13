@@ -9,7 +9,6 @@ public class StoreState extends State {
 
     final int numberOfKassor;
     final int maxCustomer;
-    final double closeTime;
     final double lambda;
     final double pickMin;
     final double pickMax;
@@ -32,7 +31,7 @@ public class StoreState extends State {
     private boolean store;
     private boolean allowView = true;
 
-    public StoreState(int numberOfKassor, int maxCustomer, double closeTime,
+    public StoreState(int numberOfKassor, int maxCustomer,
                       double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed, boolean allowView) {
         this.Kassakö = new Kassakö();
         this.createCustomer = new CustomerFactory();
@@ -42,7 +41,6 @@ public class StoreState extends State {
 
         this.numberOfKassor = numberOfKassor;
         this.maxCustomer = maxCustomer;
-        this.closeTime = closeTime;
         this.lambda = lambda;
         this.pickMin = pickMin;
         this.pickMax = pickMax;
