@@ -37,6 +37,17 @@ public class StoreState extends State {
     private boolean allowView = true;
     final double closeTime;
 
+    /**
+     * @param lambda
+     * @param pickMin
+     * @param pickMax
+     * @param payMin
+     * @param payMax
+     * @param seed
+     * @param allowView
+     * @param closeTime
+     * @return nothing
+     **/
     public StoreState(int numberOfKassor, int maxCustomer,
                       double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed, boolean allowView, double closeTime) {
         this.Kassakö = new Kassakö();
@@ -281,65 +292,145 @@ public class StoreState extends State {
         return this.missedCustomers;
     }
 
+    /**
+     * @param inget
+     * @return missedCustomers + 1
+     * */
+
     public void IncreaseMissedCustomers() {
         this.missedCustomers = this.missedCustomers + 1;
     }
+
+    /**
+     * @param inget
+     * @return freeKassorTime
+     **/
 
     public double GetFreeKassorTime() {
         return this.freeKassorTime;
     }
 
+    /**
+     * @param time
+     * @return freeKassorTime + time
+     **/
+
     public void IncreaseFreeKassorTime(double time) {
         this.freeKassorTime = this.freeKassorTime + time;
     }
+
+    /**
+     * @param inget
+     * @return queueTime
+     **/
 
     public double GetQueueTime() {
         return this.queueTime;
     }
 
+    /**
+     * @param queueTime
+     * @return queueTime + queueTime
+     **/
+
     public void IncreaseQueueTime(double queueTime) {
         this.queueTime = this.queueTime + queueTime;
     }
+
+    /**
+     * @param inget
+     * @return freeKassor
+     **/
 
     public int FreeKassor() {
         return this.freeKassor;
     }
 
+    /**
+     * @param inget
+     * @return freeKassor + 1
+     **/
+
     public void IncreaseFreeKassor() {
         this.freeKassor = this.freeKassor + 1;
     }
+
+    /**
+     * @param inget
+     * @return freeKassor - 1
+     **/
 
     public void DecreaseFreeKassor() {
         this.freeKassor = this.freeKassor - 1;
     }
 
+    /**
+     * @param inget
+     * @return currentEvent
+     **/
+
     public Event CurrentEvent() {
         return currentEvent;
     }
+
+    /**
+     * @param currentEvent
+     * @return inget
+     **/
 
     public void SetCurrentEvent(Event currentEvent) {
         this.currentEvent = currentEvent;
     }
 
+    /**
+     * @param inget
+     * @return lastPay
+     **/
+
     public double getLastPay() {
         return this.lastPay;
     }
 
+    /**
+     * @param inget
+     * @return allowView
+     **/
+
     public boolean getALlowView() {
         return this.allowView;
     }
+
+    /**
+     * @param inget
+     * @return lastEvent
+     **/
     
     public double lastEvent() {
     	return this.lastEvent;
     }
+
+    /**
+     * @param time
+     * @return lastEvent
+     **/
     
     public void setLastEvent(double time) {
     	lastEvent = time;
     }
 
+    /**
+     * @param inget
+     * @return closeTime
+     **/
+
     public double GetCloseTime() {
     	return this.closeTime;
     }
+
+    /**
+     * @param event
+     * @return inget
+     **/
     
     @Override
     public void notify(Event event) {
