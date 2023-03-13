@@ -14,6 +14,7 @@ public class Stopphändelse extends Event{
 
 	@Override
 	public void effect() {
+		state.notify(this);
 		state.stopSim();
 	}
 	

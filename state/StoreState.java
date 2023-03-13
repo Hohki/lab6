@@ -28,7 +28,7 @@ public class StoreState extends State {
     private ExponentialRandomStream nextArrival;
     private UniformRandomStream nextPlock;
     private UniformRandomStream nextPay;
-    private Kunder currentEvent;
+    private Event currentEvent;
     private boolean store;
     private boolean allowView = true;
 
@@ -194,15 +194,16 @@ public class StoreState extends State {
         this.freeKassor = this.freeKassor + 1;
     }
 
-    public void DecreaseFreeKassor() {
+    public void DecreaseFreeKassor()
+    {
         this.freeKassor = this.freeKassor - 1;
     }
 
-    public Kunder CurrentEvent() {
+    public Event CurrentEvent() {
         return currentEvent;
     }
 
-    public void SetCurrentEvent(Kunder currentEvent) {
+    public void SetCurrentEvent(Event currentEvent) {
         this.currentEvent = currentEvent;
     }
 
@@ -219,20 +220,8 @@ public class StoreState extends State {
 
     @Override
     public void notify(Event event) {
-        System.out.println("Storestate has changed...");
-        if (event instanceof Betalningshändelse) {
-            this.lastPay = event.tid();
-        }
+        setChanged();
+        notifyObservers();
 
-        if (!(event instanceof Ankomsthändelse && this.store) && !(event instanceof Stopphändelse)) {
-            double time = event.tid() - this.CurrentTime();
-
-            double queueTime = this.GetQueue().size() * time;
-            double freeKassaTid = this.FreeKassor() * time;
-
-            this.IncreaseQueueTime(queueTime);
-            this.IncreaseFreeKassorTime(freeKassaTid);
-        }
-        super.notify(event);
     }
 }

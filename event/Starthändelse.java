@@ -16,9 +16,9 @@ public class Starthändelse extends Event{
 		state.SetStoreState(true);
 		eventQueue.addEvent(this);
 		double nextArrival = state.GetNextArrival(this.tid());
-		CustomerFactory kund = new CustomerFactory();
-		Kunder newKund = kund.CreateCustomers();
+		Kunder newKund = new Kunder(new CustomerFactory().getNumber());
 		Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 		eventQueue.addEvent(ankomsthändelse);
+		state.notify(this);
 	}
 }

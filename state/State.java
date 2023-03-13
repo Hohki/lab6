@@ -1,10 +1,8 @@
 package lab6.state;
 
-import java.security.PublicKey;
-import java.util.Observable;
-
 import lab6.event.Event;
-import lab6.event.EventQueue;
+
+import java.util.Observable;
 
 public class State extends Observable {
 	public boolean simStop;
@@ -19,9 +17,7 @@ public class State extends Observable {
 	}
 	
 	public void notify(Event event) {
-		this.SetSimTime(event.tid()); 
-		this.setChanged();
-		this.notifyObservers(event);
+
 	}
 	
 	public double CurrentTime() {
