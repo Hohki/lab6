@@ -10,7 +10,6 @@ public class CustomerFactory {
 	private static int number = -1;
 
 	/**
-	 * @param nothing
 	 * @return number
 	 **/
 	public int getNumber() {

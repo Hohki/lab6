@@ -48,7 +48,6 @@ public class StoreView extends View {
 	}
 
 	/**
-	 * @param Inget
 	 */
 	public void Parameters() {
 		System.out.println("PARAMETRAR");
@@ -67,7 +66,6 @@ public class StoreView extends View {
 	}
 
 	/**
-	 * @param Inget
 	 */
 	public void WriteLine() {
 		if (state.CurrentEvent() instanceof Stängningshändelse) {
@@ -90,7 +88,6 @@ public class StoreView extends View {
 	}
 
 	/**
-	 * @param Inget
 	 */
 	public void EndPrint() {
 		System.out.println("RESULTAT");

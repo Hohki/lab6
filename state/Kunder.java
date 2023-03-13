@@ -13,7 +13,6 @@ public class Kunder {
 	 * Konstruktor för Kunder.
 	 * 
 	 * @param number
-	 * @return nothing
 	 */
 	public Kunder(int number) {
 		this.customerNumber = number;
@@ -21,8 +20,7 @@ public class Kunder {
 
 	/**
 	 * Returnerar kundnummret.
-	 * 
-	 * @param Nothing
+	 *
 	 * @return customerNumber
 	 */
 
