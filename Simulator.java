@@ -3,15 +3,11 @@ package lab6;
 import lab6.event.*;
 import lab6.state.StoreState;
 import lab6.view.StoreView;
-import lab6.view.View;
 
 public class Simulator {
 	private static StoreState state;
-	private Event event;
-	private StoreView view;
 	public Simulator(StoreState state, StoreView view) {
-		this.state = state;
-		this.view = view;
+		Simulator.state = state;
 	}
 	
 	public void Run () {

@@ -1,7 +1,6 @@
 package lab6.event;
 
 import lab6.state.*;
-import lab6.tools.Pair;
 
 public class Plockhändelse extends Event {
     private double tid;
