@@ -11,13 +11,13 @@ import lab6.view.StoreView;
 
 /**
  * 
- * Kör igång Simulator.
+ * Starts the simulator
  *
  */
 
 public class RunSim {
 	/**
-	 * Main metod som kör igång RunSim vilket i sin tur kör igång Simulator.
+	 * Main method that starts the simulator
 	 * 
 	 * @param args
 	 */

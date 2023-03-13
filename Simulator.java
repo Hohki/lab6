@@ -20,7 +20,7 @@ public class Simulator {
 	private static StoreState state;
 
 	/**
-	 * Konstruktor för Simulator
+	 * Constructor for Simulator
 	 * 
 	 * @param state
 	 * @param view
@@ -30,8 +30,7 @@ public class Simulator {
 	}
 
 	/**
-	 * Kör igång hela Simulationen och håller igång det så länge som nödbromsen inte
-	 * har aktiverats.
+	 * Starts the whole simulation and keeps it going as long as the break hasn't been activated.
 	 */
 	public void Run() {
 		Event currentEvent = new StartEvent(0.0);
