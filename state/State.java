@@ -1,3 +1,7 @@
+/**
+ * Albin, Khaled, Gabriel
+ * */
+
 package lab6.state;
 
 import lab6.event.Event;

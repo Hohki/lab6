@@ -1,3 +1,7 @@
+/**
+ * Albin, Khaled, Gabriel
+ * */
+
 package lab6.state;
 
 import lab6.event.*;
@@ -61,101 +65,217 @@ public class StoreState extends State {
         this.closeTime = closeTime;
     }
 
+
+    /**
+     * @param Inget
+     * @return lambda
+     * */
     public double GetLambda() {
         return this.lambda;
     }
+
+    /**
+     * @param Inget
+     * @return pickMax
+     * */
 
     public double GetPlockMax() {
         return this.pickMax;
     }
 
+    /**
+     * @param Inget
+     * @return pickMin
+     * */
+
     public double GetPlockMin() {
         return this.pickMin;
     }
+
+    /**
+     * @param Inget
+     * @return payMax
+     * */
 
     public double GetPayMax() {
         return this.payMax;
     }
 
+    /**
+     * @param Inget
+     * @return payMin
+     * */
+
     public double GetPayMin() {
         return this.payMin;
     }
+
+    /**
+     * @param Inget
+     * @return customer
+     **/
 
     public int GetNumberOfCustomers() {
         return this.customer;
     }
 
+    /**
+     * @param Inget
+     * @return customrer + 1
+     * */
+
     public void IncreaseNumberOfCustomer() {
         this.customer = this.customer + 1;
     }
+
+    /**
+     * @param Inget
+     * @return payedCustomers
+     * */
 
     public int NumberOfPayedCustomers() {
         return this.payedCustomers;
     }
 
+    /**
+     * @param Inget
+     * @return payedCustomers +1
+     * */
+
     public void IncreaseNumberOfPayedCustomers() {
         this.payedCustomers = this.payedCustomers + 1;
     }
+
+    /**
+     * @param Inget
+     * @return queuedCustomers
+     * */
 
     public int NumberOfQueuedCustomers() {
         return this.queuedCustomers;
     }
 
+    /**
+     * @param Inget
+     * @return queuedCustomers + 1
+     * */
+
     public void IncreaseNumberOfQueuedCustomers() {
         this.queuedCustomers = this.queuedCustomers + 1;
     }
+
+    /**
+     * @param Inget
+     * @return kassakö
+     * */
 
     public Kassakö CurrentlyQueued() {
         return this.Kassakö;
     }
 
+    /**
+     * @param Inget
+     * @return numberOfKassor
+     * */
+
     public int GetNumberOfKassor() {
         return this.numberOfKassor;
     }
+
+    /**
+     * @param Inget
+     * @return maxCustomer
+     * */
 
     public int GetMaxCustomer() {
         return this.maxCustomer;
     }
 
+    /**
+     * @param Inget
+     * @return seed
+     * */
+
     public long GetSeed() {
         return this.seed;
     }
+
+    /**
+     * @param Inget
+     * @return store
+     * */
 
     public boolean GetStore() {
         return this.store;
     }
 
+    /**
+     * @param Inget
+     * @return Inget
+     * */
+
     public void SetStoreState(boolean state) {
         this.store = state;
     }
+
+    /**
+     * @param Inget
+     * @return kassakö
+     * */
 
     public Kassakö GetQueue() {
         return this.Kassakö;
     }
 
+    /**
+     * @param time
+     * @return nextArrival.next() + time
+     * */
+
     public double GetNextArrival(double time) {
         return this.nextArrival.next() + time;
     }
+
+    /**
+     * @param time
+     * @return nextPlock.next() + time
+     * */
 
     public double GetNextPlock(double time) {
         return this.nextPlock.next() + time;
     }
 
+    /**
+     * @param time
+     * @return nextPay.next() + time
+     * */
+
     public double GetNextPay(double time) {
         return this.nextPay.next() + time;
     }
 
-    public int NumberOfCustomers() {
-        return this.customer;
-    }
+    /**
+     * @param inget
+     * @return customer + 1
+     * */
 
     public void IncreaseCustomers() {
         this.customer = this.customer + 1;
     }
 
+    /**
+     * @param inget
+     * @return customer - 1
+     * */
+
     public void DecreaseCustomers() {
         this.customer = this.customer - 1;
     }
+
+    /**
+     * @param inget
+     * @return missedCustomers
+     * */
 
     public int MissedCustomers() {
         return this.missedCustomers;
