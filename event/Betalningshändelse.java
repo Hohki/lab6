@@ -27,12 +27,13 @@ public class Betalningshändelse extends Event{
         	Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, state.GetQueue().first());				//First in queue goes to pay
             eventQueue.addEvent(betalningshändelse);																	
             state.GetQueue().removeFirst();																					//Decreases queue
+            state.notify(this);
+
         }
 		
-		if (eventQueue.isEmpty()) {									//Adds stop to next in queue if store is closed and empty
+		if (state.GetStore() == false && state.NumberOfCustomers() == 0) {									//Adds stop to next in queue if store is closed and empty
         	eventQueue.addEvent(new Stopphändelse(this.tid));
 		}
-		state.notify(this);
 	}
 
 }

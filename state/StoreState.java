@@ -24,6 +24,7 @@ public class StoreState extends State {
     private double freeKassorTime;
     private double queueTime;
     private double lastPay;
+    private double lastEvent;
     private ExponentialRandomStream nextArrival;
     private UniformRandomStream nextPlock;
     private UniformRandomStream nextPay;
@@ -48,6 +49,7 @@ public class StoreState extends State {
         this.payMin = payMin;
         this.payMax = payMax;
         this.seed = seed;
+        this.lastEvent = lastEvent;
 
         this.lastPay = 0.0d;
         this.customer = 0;
@@ -206,21 +208,32 @@ public class StoreState extends State {
     public boolean getALlowView() {
         return this.allowView;
     }
+    
+    public double lastEvent() {
+    	return this.lastEvent;
+    }
+    
+    public void setLastEvent(double time) {
+    	lastEvent = time;
+    }
 
     public double GetCloseTime() {return this.closeTime;}
     @Override
     public void notify(Event event) {
-        setChanged();
-        notifyObservers(event);
-        
-        if (!(event instanceof Ankomsthändelse && !this.store) && !(event instanceof Stopphändelse)) {
-			double time = event.tid() - this.CurrentTime();
+    	if (this.store && !(event instanceof Stopphändelse)) {
+			double time = event.tid() - lastEvent();
 			
 			double queueTime = this.GetQueue().size() * time;
 			double freeKassaTid = this.FreeKassor() * time;
 			
 			this.IncreaseQueueTime(queueTime);
 			this.IncreaseFreeKassorTime(freeKassaTid);
+			setLastEvent(event.tid());
 		}
+    	
+        setChanged();
+        notifyObservers(event);
+        
+        
     }
 }
