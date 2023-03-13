@@ -1,5 +1,6 @@
 package lab6.event;
 
+import lab6.Simulator;
 import lab6.state.Kunder;
 import lab6.state.State;
 import lab6.state.StoreState;
@@ -23,17 +24,34 @@ public abstract class Event {
 		this.tid = tid;
 	}
 
+	public Event(String str, double tid, StoreState state) {
+		this.str = str;
+		this.tid = tid;
+		this.state = state;
+	}
+
 	public Event(String str) {
 		this.str = str;
 	}
 
-
+	public Event(StoreState state) {
+		this.state = state;
+	}
 
 	public abstract void effect();
 
-	public double tid() {
-		return this.tid;
+	public void setState(StoreState state) {
+		this.state = state;
 	}
+
+	public StoreState getState() {
+		return this.state;
+	}
+
+	public String eventName() {
+		return this.str;
+	}
+	public double tid() {return this.tid;}
 
 	public Kunder kund() {
 		return this.kund;

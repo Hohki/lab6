@@ -56,7 +56,6 @@ public class StoreState extends State {
         this.missedCustomers = 0;
         this.freeKassor = numberOfKassor;
         this.queueTime = 0;
-        this.store = false;
         this.allowView = allowView;
 
     }

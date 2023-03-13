@@ -13,12 +13,12 @@ public class Starthändelse extends Event{
 
 	@Override
 	public void effect() {
+		state.SetStoreState(true);
 		eventQueue.addEvent(this);
 		double nextArrival = state.GetNextArrival(this.tid());
 		CustomerFactory kund = new CustomerFactory();
 		Kunder newKund = kund.CreateCustomers();
 		Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 		eventQueue.addEvent(ankomsthändelse);
-		System.out.println(eventQueue.toString());
 	}
 }

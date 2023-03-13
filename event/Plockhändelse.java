@@ -17,7 +17,7 @@ public class Plockhändelse extends Event {
     public void effect() {
         if (state.FreeKassor() > 0) {
             state.DecreaseFreeKassor();
-            double nextPay = this.state.GetNextPay(this.tid());
+            double nextPay = this.state.GetNextPay(this.tid);
             Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, this.kund);
             eventQueue.addEvent(betalningshändelse);
         } else {

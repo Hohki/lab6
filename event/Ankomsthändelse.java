@@ -15,25 +15,20 @@ public class Ankomsthändelse extends Event {
 
 	@Override
 	public void effect() {
-		if (state.GetStore()) {
-			double nextArrival = state.GetNextArrival(this.tid());
+		if(state.GetStore()) {
+			double nextArrival = state.GetNextArrival(this.tid);
 			CustomerFactory kund = new CustomerFactory();
 			Kunder newKund = kund.CreateCustomers();
 			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 			eventQueue.addEvent(ankomsthändelse);
 			if (state.NumberOfCustomers() < state.GetMaxCustomer()) {
 				state.IncreaseCustomers();
-				double pickTime = state.GetNextPlock(this.tid());
+				double pickTime = state.GetNextPlock(this.tid);
 				Plockhändelse plockhändelse = new Plockhändelse(pickTime, this.kund);
 				eventQueue.addEvent(plockhändelse);
 			}
-			else {
-				state.IncreaseMissedCustomers();
-			}	
+		} else {
+
 		}
-		else {
-			
-		}
-		
 	}
 }
