@@ -9,9 +9,8 @@ package lab6.event;
 import lab6.state.Kunder;
 import lab6.state.StoreState;
 /**
- * 
- * abstract Event
- *
+ * An abstract Event class that other classes inherit and implement the
+ * effect method, which runs everytime an event is called upon.
  */
 public abstract class Event {
 	protected StoreState state;
@@ -21,11 +20,11 @@ public abstract class Event {
 	private Kunder kund;
 
 	/**
-	 * Konstruktor för Event
-	 * 
-	 * @param str str
-	 * @param tid tid
-	 * @param kund kund
+	 * Constructs an Event with different types of parameters, as some Events are only
+	 * an object without a time.
+	 * @param str The name of the Event.
+	 * @param tid At what time point the event is going to occur.
+	 * @param kund The customer that the event will happen to.
 	 */
 	public Event(String str, double tid, Kunder kund) {
 		this.str = str;
@@ -34,10 +33,10 @@ public abstract class Event {
 	}
 
 	/**
-	 * Konstruktor för Event
+	 * Another constructer for Event.
 	 * 
-	 * @param str str
-	 * @param tid tid
+	 * @param str The name of the Event.
+	 * @param tid At what time point the event is going to occur.
 	 */
 
 	public Event(String str, double tid) {
@@ -46,9 +45,9 @@ public abstract class Event {
 	}
 
 	/**
-	 * Konstruktor för Event
+	 * Another constructer for Event.
 	 * 
-	 * @param str str
+	 * @param str The name of the Event.
 	 */
 
 	public Event(String str) {
@@ -56,23 +55,22 @@ public abstract class Event {
 	}
 
 	/**
-	 * Konstruktor för Event
+	 * Another constructer for Event.
 	 * 
-	 * @param state state
+	 * @param state A constructer that takes in the state of the store.
 	 */
 
 	public Event(StoreState state) {
 		this.state = state;
 	}
 	/**
-	 * Abstract effect
+	 * Abstract method to be implemented by every child of Event.
 	 */
 	public abstract void effect();
 
 	/**
-	 * Sätter state till state.
-	 * 
-	 * @param state state
+	 * Sets the events current state to the state provided.*
+	 * @param state The state of the store at a given point of time
 	 */
 
 	public void setState(StoreState state) {
@@ -80,7 +78,7 @@ public abstract class Event {
 	}
 
 	/**
-	 * Getter för state.
+	 * A getter for state
 	 * 
 	 * @return state
 	 */
@@ -90,7 +88,7 @@ public abstract class Event {
 	}
 
 	/**
-	 * Getter för namnet på eventet.
+	 * Getter for the name of the event.
 	 * 
 	 * @return str
 	 */
@@ -99,7 +97,7 @@ public abstract class Event {
 	}
 
 	/**
-	 * Getter för tiden.
+	 * Getter for the time of the event.
 	 * 
 	 * @return tid
 	 */
@@ -108,7 +106,7 @@ public abstract class Event {
 	}
 
 	/**
-	 * Getter för kunden.
+	 * Getter for the customer that is going to do the event.
 	 * 
 	 * @return kund
 	 */
@@ -117,7 +115,8 @@ public abstract class Event {
 	}
 
 	/**
-	 * Getter för eventQueue.
+	 * Getter for the eventQueue that holds all of the events that are going
+	 * to occur.
 	 * 
 	 * @return eventQueue
 	 */
@@ -126,7 +125,8 @@ public abstract class Event {
 	}
 
 	/**
-	 * Getter för str + tid.
+	 * Gives the event in string format as a pair, name of the event and the time at
+	 * which it will happen at.
 	 * 
 	 * @return string
 	 */

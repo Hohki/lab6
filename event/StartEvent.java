@@ -11,16 +11,16 @@ import lab6.state.Kunder;
 
 public class StartEvent extends Event {
 	/**
-	 * Konstruktor för Starthändelse.
-	 * 
-	 * @param tid tid
+	 * Constructs an object of type StartEvent, that begins the simulation at
+	 * currentTime of simulation.
+	 * @param tid Time at which the simulation starts.
 	 */
 	public StartEvent(double tid) {
 		super("Start", tid);
 	}
 
 	/**
-	 * Lägger till en första Ankomsthändelse. Öppnar butiken.
+	 * Adds the first ankomstEvent and sets the store state to open.
 	 */
 
 	@Override

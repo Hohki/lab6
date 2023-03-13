@@ -10,16 +10,16 @@ public class StoppEvent extends Event {
 	double tid;
 
 	/**
-	 * Konstruktor för Stopphändelse
-	 * 
-	 * @param tid tid
+	 * Constructs a stoppEvent at a given time point.
+	 *
+	 * @param tid Time at which the simulations stops
 	 */
 	public StoppEvent(double tid) {
 		super("Stopp", tid);
 	}
 
 	/**
-	 * Aktiverar nödbromsen.
+	 * Stops the simulation.
 	 */
 	@Override
 	public void effect() {

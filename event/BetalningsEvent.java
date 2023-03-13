@@ -12,10 +12,11 @@ public class BetalningsEvent extends Event {
 	private double tid;
 
 	/**
-	 * Konstruktor för Betalningshändelse
-	 * 
-	 * @param tid tid
-	 * @param kund kund
+	 * Constructer for betalningEvent, an object that holds the time of the event
+	 * and the customer that will do that event.
+	 *
+	 * @param tid Time when the event is going to occur.
+	 * @param kund The customer that the event is going to happen to.
 	 */
 	public BetalningsEvent(double tid, Kunder kund) {
 		super("Betalning", tid, kund);

@@ -9,30 +9,28 @@ package lab6.event;
 import java.util.ArrayList;
 /**
  * 
- * Class EventQueue
+ * Class EventQueue is a class that holds a an arraylist
+ * of object Event, used to store all the upcoming events.
  *
  */
 public class EventQueue {
 	private ArrayList<Event> eventQueue = new ArrayList<Event>();
 
 	/**
-	 * Lägger till event i eventQueue.
+	 * Adds an event to the eventQueue.
 	 * 
-	 * @param event event
+	 * @param event An event has a name and a customer which will do that event.
 	 */
 	public void addEvent(Event event) {
 		this.eventQueue.add(event);
 	}
 
 	/**
-	 * Sorterar eventQueue.
+	 * Sorts the eventQueue so at the begining of the eventQueue is the event
+	 * that is going to happen the soonest. Uses an insertionsort to sort the eventQueue.
 	 *
 	 */
 	public void sortEventQueue() {
-		/*
-		 * Sorterar listan efter man har adderat en event så att den första event i
-		 * listan är de som kommer att hända tidigast
-		 */
 		if (this.eventQueue.size() > 1) {
 			for (int i = 1; i < this.eventQueue.size(); i++) {
 				Event tmpEvent = this.eventQueue.get(i);
@@ -47,9 +45,9 @@ public class EventQueue {
 	}
 
 	/**
-	 * Tar bort ett event från eventQueue vid ett visst index.
-	 * 
-	 * @param index index på eventQueue
+	 * Removes an event at a given index.
+	 *
+	 * @param index index of the event to be removed.
 	 * @return tmpEvent
 	 */
 	public Event removeEvent(int index) {
@@ -59,21 +57,19 @@ public class EventQueue {
 	}
 
 	/**
-	 * Tar bort första eventet i eventQueue.
-	 * 
+	 * Removes the first item in the eventQueue.
+	 *
 	 * @return tmpEvent
 	 */
 
 	public Event removeFirstEvent() {
 		Event tmpEvent = this.eventQueue.get(0);
-		// System.out.println("First item in list: " +
-		// this.eventQueue.get(0).eventName() + this.eventQueue.get(0).tid);
 		this.eventQueue.remove(0);
 		return tmpEvent;
 	}
 
 	/**
-	 * Returnerar eventQueue i String form.
+	 * Returens the eventQueue in string format.
 	 * 
 	 * @return tmp
 	 */
@@ -92,8 +88,8 @@ public class EventQueue {
 	}
 
 	/**
-	 * Kollar om eventQueue är tom eller inte.
-	 * 
+	 * Checks if eventQueue is empty of not
+	 *
 	 * @return eventQueue.isEmpty();
 	 */
 
@@ -102,8 +98,8 @@ public class EventQueue {
 	}
 
 	/**
-	 * Kollar längden på eventQueue.
-	 * 
+	 * Returns the length of the current eventQueue
+	 *
 	 * @return eventQueue.size();
 	 */
 
@@ -112,8 +108,7 @@ public class EventQueue {
 	}
 
 	/**
-	 * Returnerar första eventet i eventQueue.
-	 * 
+	 * Returns first event i eventQueue.
 	 * @return event
 	 */
 
