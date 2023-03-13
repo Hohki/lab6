@@ -1,5 +1,7 @@
 /**
- * Albin, Khaled, Gabriel
+ * @author Albin
+ * @author Khaled
+ * @outhor Gabriel
  * */
 
 package lab6.state;

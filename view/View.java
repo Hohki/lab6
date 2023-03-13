@@ -1,5 +1,7 @@
 /**
- * Albin, Khaled, Gabriel
+ * @author Albin
+ * @author Khaled
+ * @author Gabriel
  * */
 
 package lab6.view;
