@@ -16,19 +16,21 @@ public class StoreView extends View {
         Parameters();
     }
 
+    //Observable o är state objected
+    //Object arg är själva eventet som ändrade på state objectet
     @Override
     public void update(Observable o, Object arg) {
         if (this.state.getALlowView()) {
             WriteLine();
 
-/*            if (event instanceof Stopphändelse) {
-                EndPrint();
-            }*/
-        } /*else {
-            if (event instanceof Stopphändelse) {
+            if (arg instanceof Stopphändelse) {
                 EndPrint();
             }
-        }*/
+        } else {
+            if (arg instanceof Stopphändelse) {
+                EndPrint();
+            }
+        }
     }
 
     public void Parameters() {
@@ -37,8 +39,8 @@ public class StoreView extends View {
         System.out.println("Antal kassor, N..........: " + state.GetNumberOfKassor());
         System.out.println("Max som ryms, M..........: " + state.GetMaxCustomer());
         System.out.println("Ankomsthastighet, lambda.: " + state.GetLambda());
-        System.out.println("Plocktider, [Pmin...Pmax]: [" + state.GetPlockMin() + ".." + state.GetPlockMax());
-        System.out.println("Betaltider, [Kmin...Kmax]: [" + state.GetPayMin() + ".." + state.GetPayMax());
+        System.out.println("Plocktider, [Pmin...Pmax]: [" + state.GetPlockMin() + ".." + state.GetPlockMax() + "]") ;
+        System.out.println("Betaltider, [Kmin...Kmax]: [" + state.GetPayMin() + ".." + state.GetPayMax() + "]");
         System.out.println("Frö, f...................: " + state.GetSeed());
         System.out.println();
         System.out.println("FÖRLOPP");
@@ -47,7 +49,7 @@ public class StoreView extends View {
     }
 
     public void WriteLine() {
-        System.out.printf("%6.2f %s %s %3d %7.2f % 4d % 4d  % 4d    % 4d  %6.2f    % 4d    %s%n",
+        System.out.printf("%6.2f %s %s %3d %7.2f % 4d % 4d  % 4d  % 4d  %6.2f    % 4d    %s%n",
                 state.CurrentTime(), state.CurrentEvent().eventName(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
                 state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
                 state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());

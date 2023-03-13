@@ -16,7 +16,6 @@ public class Betalningshändelse extends Event{
 
 	@Override
 	public void effect() {
-		System.out.println("En betalning har skett..");
 		state.notify(this);
 	}
 

@@ -221,7 +221,6 @@ public class StoreState extends State {
     @Override
     public void notify(Event event) {
         setChanged();
-        notifyObservers();
-
+        notifyObservers(event);
     }
 }
