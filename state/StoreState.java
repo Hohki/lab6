@@ -155,10 +155,7 @@ public class StoreState extends State {
         this.customer = this.customer + 1;
     }
 
-    public void DecreaseCustomers() throws Exception {
-        if (this.customer == 0) {
-            throw new RuntimeException("Number of customers is already 0");
-        }
+    public void DecreaseCustomers() {
         this.customer = this.customer - 1;
     }
 

@@ -16,7 +16,7 @@ public class Kassakö {
 		}
 	}
 
-	public Object first() throws NoSuchElementException {
+	public Kunder first() throws NoSuchElementException {
 		try {
 			return queue.get(0);
 		} catch (Exception e) {

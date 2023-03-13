@@ -8,8 +8,8 @@ import lab6.tools.Pair;
 public class Stopphändelse extends Event{
 	double tid;
 	Kunder kund;
-	public Stopphändelse(double tid, Kunder kund) {
-		super("Stopp", tid, kund);
+	public Stopphändelse(double tid) {
+		super("Stopp", tid);
 	}
 
 	@Override

@@ -24,16 +24,16 @@ public class Betalningshändelse extends Event{
             
         } else {
             double nextPay = this.state.GetNextPay(this.tid);
-        	Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, state.ObjectFirst());				//First in queue goes to pay
+        	Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, state.GetQueue().first());				//First in queue goes to pay
             eventQueue.addEvent(betalningshändelse);																	
-            state.removeFirst();																						//Decreases queue
+            state.GetQueue().removeFirst();;																						//Decreases queue
             state.notify(this);
 
         }
 		
-		if (state.GetStore() == false && state.NumberOfCustomers() == 0)
-			Stopphändelse stopphändelse = new Stopphändelse(null, this.time);											//Adds stop to next in queue if store is closed and empty
-        	eventQueue.addEvent(stopphändelse);
+		if (state.GetStore() == false && state.NumberOfCustomers() == 0) {									//Adds stop to next in queue if store is closed and empty
+        	eventQueue.addEvent(new Stopphändelse(this.tid));
+		}
 	}
 
 }
