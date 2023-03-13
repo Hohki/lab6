@@ -23,7 +23,6 @@ public class Simulator {
 					currentEvent.setState(state);
 					state.SetCurrentEvent(currentEvent);
 					state.SetSimTime(currentEvent.tid());
-					System.out.println(currentEvent.toString());
 					currentEvent.effect();
 					currentEvent.getEventQueue().removeFirstEvent();
 					currentEvent.getEventQueue().sortEventQueue();
