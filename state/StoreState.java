@@ -191,8 +191,7 @@ public class StoreState extends State {
         this.freeKassor = this.freeKassor + 1;
     }
 
-    public void DecreaseFreeKassor()
-    {
+    public void DecreaseFreeKassor() {
         this.freeKassor = this.freeKassor - 1;
     }
 
@@ -211,9 +210,6 @@ public class StoreState extends State {
     public boolean getALlowView() {
         return this.allowView;
     }
-
-
-
 
     @Override
     public void notify(Event event) {

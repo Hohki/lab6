@@ -21,25 +21,16 @@ public class Simulator {
 				Event currentEvent = new Starthändelse(0.0);
 
 				//Uncomment when code is done
-/*				while (!state.GetStore() && !currentEvent.getEventQueue().isEmpty()) {
-					currentEvent.setState(state);
-					state.SetCurrentEvent(currentEvent);
-					state.SetSimTime(currentEvent.tid());
-					currentEvent.effect();
-					currentEvent.getEventQueue().removeFirstEvent();
-					currentEvent.getEventQueue().sortEventQueue();
-					currentEvent = currentEvent.getEventQueue().getFirst();
-					state.notifyObservers();
-				}*/
-				for(int i = 0; i < 11; i++) {
-					currentEvent.setState(state);
-					state.SetCurrentEvent(currentEvent);
-					state.SetSimTime(currentEvent.tid());
-					currentEvent.effect();
-					currentEvent.getEventQueue().removeFirstEvent();
-					currentEvent.getEventQueue().sortEventQueue();
-					currentEvent = currentEvent.getEventQueue().getFirst();
-				}
+			while (!state.GetStore() && !currentEvent.getEventQueue().isEmpty()) {
+				currentEvent.setState(state);
+				state.SetCurrentEvent(currentEvent);
+				state.SetSimTime(currentEvent.tid());
+				currentEvent.effect();
+				currentEvent.getEventQueue().removeFirstEvent();
+				currentEvent.getEventQueue().sortEventQueue();
+				currentEvent = currentEvent.getEventQueue().getFirst();
+				state.notifyObservers();
+			}
 	}
 }
 
