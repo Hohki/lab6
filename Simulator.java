@@ -21,7 +21,7 @@ public class Simulator {
 				Event currentEvent = new Starthändelse(0.0);
 
 				//Uncomment when code is done
-			while (!state.GetStore() && !currentEvent.getEventQueue().isEmpty()) {
+			while (!state.simStop) {
 				currentEvent.setState(state);
 				state.SetCurrentEvent(currentEvent);
 				state.SetSimTime(currentEvent.tid());

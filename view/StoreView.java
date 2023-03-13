@@ -46,10 +46,11 @@ public class StoreView extends View {
         System.out.println("FÖRLOPP");
         System.out.println("=======");
         System.out.println("Tid Händelse  Kund  ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
+        System.out.println("0,00 Start");
     }
 
     public void WriteLine() {
-        System.out.printf("%6.2f %s %s %3d %7.2f % 4d % 4d  % 4d  % 4d  %6.2f    % 4d    %s%n",
+        System.out.printf("%6.2f %s %s %3s %7.2s % 4f % 4d  % 4d  % 4d  %6.2s    % 4f    %s%n",
                 state.CurrentTime(), state.CurrentEvent().eventName(), state.CurrentEvent().kund().getID(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
                 state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
                 state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
