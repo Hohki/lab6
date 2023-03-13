@@ -1,19 +1,20 @@
 package lab6.event;
 
+import lab6.state.Kunder;
 import lab6.state.State;
 import lab6.state.StoreState;
 import lab6.tools.Pair;
 
 public class Stopphändelse extends Event{
-
-	public Stopphändelse(State state, String str, Pair pair) {
-		super(state, str, pair);
+	double tid;
+	Kunder kund;
+	public Stopphändelse(double tid, Kunder kund) {
+		super("Stopp", tid, kund);
 	}
 
 	@Override
-	public void effect(StoreState state) {
+	public void effect() {
 		state.stopSim();
 	}
-
 	
 }

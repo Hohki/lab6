@@ -1,28 +1,28 @@
 package lab6.event;
+
 import lab6.state.*;
 import lab6.tools.Pair;
 
 public class Plockhändelse extends Event {
-	private StoreState state;
+    private double tid;
+    private Kunder kund;
 
-	 public Plockhändelse(StoreState state, String str, Pair pair) {
-		 super(state, "Plock", pair);
-		 this.pair = pair;
-		 this.state = state;
-	 }
+    public Plockhändelse(double tid, Kunder kund) {
+        super("Plock", tid, kund);
+        this.tid = tid;
+        this.kund = kund;
+    }
 
-	@Override
-	public void effect(StoreState state) {
-		if (this.state.FreeKassor() > 0) {
-			this.state.DecreaseFreeKassor();
-			double nextPay = this.state.GetNextPay(this.pair.tid());
-			Pair newPay = new Pair(this.pair.kund(), nextPay);
-			Betalningshändelse betalningshändelse = new Betalningshändelse(this.state, "Betal", newPay);
-			eventQueue.addEvent(betalningshändelse);
-		}
-		else {
-			this.state.GetQueue().add(pair.kund());
-			this.state.IncreaseNumberOfQueuedCustomers();
-		}
-	}
+    @Override
+    public void effect() {
+        if (state.FreeKassor() > 0) {
+            state.DecreaseFreeKassor();
+            double nextPay = this.state.GetNextPay(this.tid);
+            Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, this.kund);
+            eventQueue.addEvent(betalningshändelse);
+        } else {
+            state.GetQueue().add(kund());
+            state.IncreaseNumberOfQueuedCustomers();
+        }
+    }
 }

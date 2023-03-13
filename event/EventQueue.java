@@ -7,6 +7,9 @@ public class EventQueue {
 
     public void addEvent(Event event) {
         this.eventQueue.add(event);
+    }
+
+    public void sortEventQueue() {
         /*Sorterar listan efter man har adderat en event
         så att den första event i listan är de som kommer att
         hända tidigast
@@ -14,7 +17,7 @@ public class EventQueue {
         int j;
         for (int i = 0; i < this.eventQueue.size(); i++) {
             Event tmpEvent = this.eventQueue.get(i);
-            j = i;
+            j = i+1;
             do {
                 this.eventQueue.set(j, this.eventQueue.get(j-1));
                 j--;
@@ -31,9 +34,23 @@ public class EventQueue {
 
     public Event removeFirstEvent() {
         Event tmpEvent = this.eventQueue.get(0);
+        //System.out.println("First item in list: " + this.eventQueue.get(0).eventName() + this.eventQueue.get(0).tid);
         this.eventQueue.remove(0);
         return tmpEvent;
     }
+
+/*    public String toString() {
+        String tmp = "";
+        for (int i = 0; i < this.eventQueue.size(); i++) {
+            if (this.eventQueue.get(i).kund() != null) {
+                tmp = tmp + "(" + this.eventQueue.get(i).eventName() + ", " + "time: " + this.eventQueue.get(i).tid + ", id:" + this.eventQueue.get(i).kund().getID() + ")" + ", ";
+            } else {
+                tmp = tmp + "(" + this.eventQueue.get(i).eventName() + ", " + "time: " + this.eventQueue.get(i).tid + ")" + ", ";
+            }
+        }
+        return tmp;
+    }*/
+
 
     public boolean isEmpty() {
         return this.eventQueue.isEmpty();

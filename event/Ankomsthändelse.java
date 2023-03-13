@@ -4,39 +4,31 @@ import lab6.state.*;
 import lab6.tools.Pair;
 
 public class Ankomsthändelse extends Event {
-	private StoreState state;
-	
-	public Ankomsthändelse(State state, String str, Pair pair) {
-		super(state, str, pair);
-		this.str = str;
-		this.pair = pair;
+	private double tid;
+	private Kunder kund;
+
+	public Ankomsthändelse(double tid, Kunder kund) {
+		super("Ankomst", tid, kund);
+		this.tid = tid;
+		this.kund = kund;
 	}
 
 	@Override
-	public void effect(StoreState state) {
-		if (this.state.GetStore()) {
-			double nextArrival = this.state.GetNextArrival(pair.tid());
+	public void effect() {
+		if(state.GetStore()) {
+			double nextArrival = state.GetNextArrival(this.tid);
 			CustomerFactory kund = new CustomerFactory();
 			Kunder newKund = kund.CreateCustomers();
-			pair = new Pair(newKund, nextArrival);
-			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(state, str, pair);
+			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 			eventQueue.addEvent(ankomsthändelse);
-			if (this.state.NumberOfCustomers() < this.state.GetMaxCustomer()) {
-				this.state.IncreaseCustomers();
-				double pickTime = this.state.GetNextPlock(pair.tid());
-				Pair nextPlock = new Pair(pair.kund(), pickTime);
-				Plockhändelse plockhändelse = new Plockhändelse(this.state, "Plock", nextPlock);
+			if (state.NumberOfCustomers() < state.GetMaxCustomer()) {
+				state.IncreaseCustomers();
+				double pickTime = state.GetNextPlock(this.tid);
+				Plockhändelse plockhändelse = new Plockhändelse(pickTime, this.kund);
 				eventQueue.addEvent(plockhändelse);
 			}
-			else {
-				this.state.IncreaseMissedCustomers();
-			}	
-		}
-		else {
-			
-		}
-		
-	}
-	
+		} else {
 
+		}
+	}
 }

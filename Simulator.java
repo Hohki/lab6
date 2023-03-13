@@ -1,16 +1,15 @@
 package lab6;
 
 
-import lab6.event.EventQueue;
+import lab6.event.Ankomsthändelse;
 import lab6.event.Event;
 import lab6.event.Starthändelse;
-import lab6.state.State;
 import lab6.state.StoreState;
 import lab6.view.View;
 
 public class Simulator {
 	private StoreState state;
-	Event event;
+	private Event event;
 	private View view;
 	//Constructs and runs the simulation.
 	public Simulator(StoreState state, View view) {
@@ -21,11 +20,15 @@ public class Simulator {
 	
 	public void Run () {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
-				while (!state.simStop) {
-					Event currentEvent = event.getEventQueue().getFirst();
-					currentEvent.effect(this.state);
+				Event currentEvent = new Starthändelse(0.0);
+				for(int i = 0; i < 5; i++) {
+					currentEvent.setState(state);
+					currentEvent.effect();
+					currentEvent.getEventQueue().removeFirstEvent();
+					currentEvent = currentEvent.getEventQueue().getFirst();
+					//currentEvent.getEventQueue().sortEventQueue();
 				}
-				System.out.print("The simulation is finished");
+				System.out.println("The simulation is finished");
 	}
 }
 

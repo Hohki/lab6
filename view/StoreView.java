@@ -44,7 +44,6 @@ public class StoreView extends View {
         System.out.println("FÖRLOPP");
         System.out.println("=======");
         System.out.println("Tid Händelse  Kund  ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
-        System.out.println("0,00 Start");
     }
 
     public void WriteLine(Object event) {
