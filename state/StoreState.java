@@ -136,15 +136,15 @@ public class StoreState extends State {
     }
 
     public double GetNextArrival(double time) {
-        return Math.round(this.nextArrival.next() + time);
+        return this.nextArrival.next() + time;
     }
 
     public double GetNextPlock(double time) {
-        return Math.round(this.nextPlock.next() + time);
+        return this.nextPlock.next() + time;
     }
 
     public double GetNextPay(double time) {
-        return Math.round(this.nextPay.next() + time);
+        return this.nextPay.next() + time;
     }
 
     public int NumberOfCustomers() {

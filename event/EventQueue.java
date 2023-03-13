@@ -7,19 +7,6 @@ public class EventQueue {
 
     public void addEvent(Event event) {
         this.eventQueue.add(event);
-        if (this.eventQueue.size() > 1) {
-            int j;
-            for (int i = 0; i < this.eventQueue.size(); i++) {
-
-                Event tmpEvent = this.eventQueue.get(i);
-                j = i + 1;
-                while ((j > 0) && this.eventQueue.get(j - 1).tid() < tmpEvent.tid()) {
-                    this.eventQueue.set(j, this.eventQueue.get(j - 1));
-                    j--;
-                }
-                this.eventQueue.set(j-1, tmpEvent);
-            }
-        }
     }
 
     public void sortEventQueue() {
@@ -28,19 +15,15 @@ public class EventQueue {
         hända tidigast
         * */
         if (this.eventQueue.size() > 1) {
-            int j;
-            for (int i = 0; i < this.eventQueue.size(); i++) {
-
+            for (int i = 1; i < this.eventQueue.size(); i++) {
                 Event tmpEvent = this.eventQueue.get(i);
-                j = i + 1;
-                while ((j > 0) && this.eventQueue.get(j - 1).tid() < tmpEvent.tid()) {
-                    this.eventQueue.set(j, this.eventQueue.get(j - 1));
+                int j = i - 1;
+                while (j >= 0 && this.eventQueue.get(j).tid() > tmpEvent.tid()) {
+                    this.eventQueue.set(j + 1, this.eventQueue.get(j));
                     j--;
                 }
-                this.eventQueue.set(j-1, tmpEvent);
-                }
-        } else {
-            System.out.println("List has no elements or just one element...");
+                this.eventQueue.set(j+1, tmpEvent);
+            }
         }
     }
 
@@ -61,9 +44,9 @@ public class EventQueue {
         String tmp = "";
         for (int i = 0; i < this.eventQueue.size(); i++) {
             if (this.eventQueue.get(i).kund() != null) {
-                tmp = tmp + "(" + this.eventQueue.get(i).eventName() + ", " + "time: " + this.eventQueue.get(i).tid + ", id:" + this.eventQueue.get(i).kund().getID() + ")" + ", ";
+                tmp = tmp + "(" + this.eventQueue.get(i).eventName() + ", " + "time: " + this.eventQueue.get(i).tid() + ", id:" + this.eventQueue.get(i).kund().getID() + ")" + ", ";
             } else {
-                tmp = tmp + "(" + this.eventQueue.get(i).eventName() + ", " + "time: " + this.eventQueue.get(i).tid + ")" + ", ";
+                tmp = tmp + "(" + this.eventQueue.get(i).eventName() + ", " + "time: " + this.eventQueue.get(i).tid() + ")" + ", ";
             }
         }
         return tmp;
@@ -75,6 +58,10 @@ public class EventQueue {
     }
 
     public Event getFirst() {
-        return this.eventQueue.get(0);
+        if (this.eventQueue.size()>0) {
+            return this.eventQueue.get(0);
+        } else {
+            return null;
+        }
     }
 }

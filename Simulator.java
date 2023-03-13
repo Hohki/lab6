@@ -21,16 +21,14 @@ public class Simulator {
 	public void Run () {
 		//As long as list is not empty, and simStop is not active, sim will fetch events from list and play its effects.
 				Event currentEvent = new Starthändelse(0.0);
-				for(int i = 0; i < 10; i++) {
+				for(int i = 0; i < 5; i++) {
+					System.out.println(currentEvent.getEventQueue().toString());
 					currentEvent.setState(state);
 					currentEvent.effect();
-					System.out.println(currentEvent.getEventQueue().toString());
-					//System.out.println(currentEvent.toString());
 					currentEvent.getEventQueue().removeFirstEvent();
+					currentEvent.getEventQueue().sortEventQueue();
 					currentEvent = currentEvent.getEventQueue().getFirst();
-					//currentEvent.getEventQueue().sortEventQueue();
 				}
-
 	}
 }
 
