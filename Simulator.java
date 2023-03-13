@@ -24,13 +24,13 @@ public class Simulator {
 				for(int i = 0; i < 10; i++) {
 					currentEvent.setState(state);
 					currentEvent.effect();
+					System.out.println(currentEvent.getEventQueue().toString());
 					//System.out.println(currentEvent.toString());
 					currentEvent.getEventQueue().removeFirstEvent();
 					currentEvent = currentEvent.getEventQueue().getFirst();
 					//currentEvent.getEventQueue().sortEventQueue();
 				}
-				System.out.println(currentEvent.getEventQueue().toString());
-				System.out.println("The simulation is finished");
+
 	}
 }
 
