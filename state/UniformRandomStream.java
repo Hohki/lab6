@@ -17,7 +17,6 @@ public class UniformRandomStream {
 	 * Konstruktor för UniformRandomStream.
 	 * 
 	 * @param lower, upper seed
-	 * @return nothing
 	 */
 	public UniformRandomStream(double lower, double upper, long seed) {
 		rand = new Random(seed);
@@ -29,7 +28,6 @@ public class UniformRandomStream {
 	 * Konstruktor för UniformRandomStream.
 	 * 
 	 * @param lower, upper
-	 * @return nothing
 	 */
 
 	public UniformRandomStream(double lower, double upper) {
@@ -40,8 +38,7 @@ public class UniformRandomStream {
 
 	/**
 	 * Returnerar nästa tal.
-	 * 
-	 * @param nothing
+	 *
 	 * @return lower+rand.nextDouble()*width
 	 */
 

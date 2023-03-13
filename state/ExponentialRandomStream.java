@@ -29,7 +29,6 @@ public class ExponentialRandomStream {
 	 * Konstruktor för ExponentialRandomStream.
 	 * 
 	 * @param lambda
-	 * @return Nothing
 	 **/
 
 	public ExponentialRandomStream(double lambda) {
@@ -39,8 +38,7 @@ public class ExponentialRandomStream {
 
 	/**
 	 * Returnerar nästa tal.
-	 * 
-	 * @param Nothing
+	 *
 	 * @return -Math.log(rand.nextDouble())/lambda
 	 **/
 
