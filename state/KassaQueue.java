@@ -1,26 +1,26 @@
 /**
- * @author Albin
- * @author Khaled
- * @author Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
-
 
 package lab6.state;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-public class Kassakö {
+public class KassaQueue {
 
 	private int maxsize = 0;
-
 
 	private ArrayList<Kunder> queue = new ArrayList<Kunder>();
 
 	/**
+	 * Lägger till en Kund i Kassakö.
+	 * 
 	 * @param arg0
 	 * @return nothing
-	 * */
+	 */
 
 	public void add(Kunder arg0) {
 		queue.add(arg0);
@@ -30,9 +30,11 @@ public class Kassakö {
 	}
 
 	/**
+	 * Returnerar kunden längs fram i Kassakö
+	 * 
 	 * @param nothing
 	 * @return get(0) or throws a NoSuchElementException()
-	 * */
+	 */
 
 	public Kunder first() throws NoSuchElementException {
 		try {
@@ -43,15 +45,19 @@ public class Kassakö {
 	}
 
 	/**
+	 * Returnerar om Kassakö är tom eller inte.
+	 * 
 	 * @param nothing
 	 * @return isEmpty()
-	 * */
+	 */
 
 	public boolean isEmpty() {
 		return queue.isEmpty();
 	}
 
 	/**
+	 * Returnerar största storleken av Kassakö.
+	 * 
 	 * @param nothing
 	 * @return maxsize
 	 **/
@@ -60,6 +66,8 @@ public class Kassakö {
 	}
 
 	/**
+	 * Tar bort första Kunden i Kassakö
+	 * 
 	 * @param nothing
 	 * @return nothing
 	 **/
@@ -70,10 +78,12 @@ public class Kassakö {
 		} catch (Exception e) {
 			throw new NoSuchElementException();
 		}
-		
+
 	}
 
 	/**
+	 * Returnerar storleken på Kassakö.
+	 * 
 	 * @param nothing
 	 * @return size()
 	 **/
@@ -83,6 +93,8 @@ public class Kassakö {
 	}
 
 	/**
+	 * Returnerar Kassakö som en String.
+	 * 
 	 * @param nothing
 	 * @return s
 	 **/

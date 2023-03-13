@@ -18,6 +18,7 @@ public abstract class Event {
 
 	/**
 	 * Konstruktor för Event
+	 * 
 	 * @param str
 	 * @param tid
 	 * @param kund
@@ -27,9 +28,10 @@ public abstract class Event {
 		this.tid = tid;
 		this.kund = kund;
 	}
-	
+
 	/**
 	 * Konstruktor för Event
+	 * 
 	 * @param str
 	 * @param tid
 	 */
@@ -38,16 +40,20 @@ public abstract class Event {
 		this.str = str;
 		this.tid = tid;
 	}
+
 	/**
 	 * Konstruktor för Event
+	 * 
 	 * @param str
 	 */
 
 	public Event(String str) {
 		this.str = str;
 	}
+
 	/**
 	 * Konstruktor för Event
+	 * 
 	 * @param state
 	 */
 
@@ -56,54 +62,66 @@ public abstract class Event {
 	}
 
 	public abstract void effect();
-	
+
 	/**
 	 * Sätter state till state.
+	 * 
 	 * @param state
 	 */
 
 	public void setState(StoreState state) {
 		this.state = state;
 	}
-	
+
 	/**
 	 * Getter för state.
+	 * 
 	 * @return state
 	 */
 
 	public StoreState getState() {
 		return this.state;
 	}
+
 	/**
 	 * Getter för namnet på eventet.
+	 * 
 	 * @return str
 	 */
 	public String eventName() {
 		return this.str;
 	}
+
 	/**
 	 * Getter för tiden.
+	 * 
 	 * @return tid
 	 */
 	public double tid() {
 		return this.tid;
 	}
+
 	/**
 	 * Getter för kunden.
+	 * 
 	 * @return kund
 	 */
 	public Kunder kund() {
 		return this.kund;
 	}
+
 	/**
 	 * Getter för eventQueue.
+	 * 
 	 * @return eventQueue
 	 */
 	public EventQueue getEventQueue() {
 		return eventQueue;
 	}
+
 	/**
 	 * Getter för str + tid.
+	 * 
 	 * @return string
 	 */
 	public String toString() {

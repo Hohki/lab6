@@ -1,7 +1,7 @@
 /**
- * @author Albin
- * @author Khaled
- * @author Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
 
 package lab6.state;

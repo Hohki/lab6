@@ -6,15 +6,18 @@
 
 package lab6.event;
 
-public class Stopphändelse extends Event{
+public class Stopphändelse extends Event {
 	double tid;
+
 	/**
 	 * Konstruktor för Stopphändelse
+	 * 
 	 * @param tid
 	 */
 	public Stopphändelse(double tid) {
 		super("Stopp", tid);
 	}
+
 	/**
 	 * Aktiverar nödbromsen.
 	 */
@@ -23,5 +26,5 @@ public class Stopphändelse extends Event{
 		state.notify(this);
 		state.stopSim();
 	}
-	
+
 }

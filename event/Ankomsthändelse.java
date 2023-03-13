@@ -4,7 +4,6 @@
  *@author Albin Kullberg
  * */
 
-
 package lab6.event;
 
 import lab6.state.*;
@@ -12,9 +11,10 @@ import lab6.state.*;
 public class Ankomsthändelse extends Event {
 	private double tid;
 	private Kunder kund;
-	
+
 	/**
 	 * Konstruktor för Ankomsthändelse
+	 * 
 	 * @param tid
 	 * @param kund
 	 */
@@ -24,10 +24,11 @@ public class Ankomsthändelse extends Event {
 		this.tid = tid;
 		this.kund = kund;
 	}
+
 	/**
-	 * Kör ankomsteventet.
-	 * Skapar nästa ankomsthändelse så länge butiken är öppen.
+	 * Kör ankomsteventet. Skapar nästa ankomsthändelse så länge butiken är öppen.
 	 * Skapar en plockhändelse om det finns plats för kunden i butiken.
+	 * 
 	 * @param Inget
 	 * @return Inget
 	 */
@@ -35,7 +36,7 @@ public class Ankomsthändelse extends Event {
 	@Override
 	public void effect() {
 		state.notify(this);
-		if(state.GetStore()) {
+		if (state.GetStore()) {
 			double nextArrival = state.GetNextArrival(this.tid);
 			Kunder newKund = new Kunder(new CustomerFactory().getNumber());
 			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);

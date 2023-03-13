@@ -1,7 +1,7 @@
 /**
- * @author Albin
- * @author Khaled
- * @author Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
 
 package lab6.state;
@@ -14,17 +14,21 @@ public class State extends Observable {
 	protected double simTime;
 
 	/**
+	 * Konstruktor för State.
+	 * 
 	 * @param Inget
 	 * @return Inget
-	 * */
+	 */
 	public State() {
 		this.simStop = false;
 	}
 
 	/**
+	 * Sätter simTime till vad time är.
+	 * 
 	 * @param time
 	 * @return Inget
-	 * */
+	 */
 	public void SetSimTime(double time) {
 		this.simTime = time;
 	}
@@ -32,24 +36,28 @@ public class State extends Observable {
 	/**
 	 * @param event
 	 * @return inget
-	 * */
+	 */
 	public void notify(Event event) {
 
 	}
 
 	/**
+	 * Returnerar nuvarande tiden.
+	 * 
 	 * @param Nothing
 	 * @return simTime
-	 * */
+	 */
 
 	public double CurrentTime() {
 		return simTime;
 	}
 
 	/**
+	 * Sätter stopSim till true.
+	 * 
 	 * @param Nothing
 	 * @return Nothing
-	 * */
+	 */
 
 	public void stopSim() {
 		simStop = true;
