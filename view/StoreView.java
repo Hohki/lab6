@@ -50,7 +50,7 @@ public class StoreView extends View {
 
     public void WriteLine() {
         System.out.printf("%6.2f %s %s %3d %7.2f % 4d % 4d  % 4d  % 4d  %6.2f    % 4d    %s%n",
-                state.CurrentTime(), state.CurrentEvent().eventName(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
+                state.CurrentTime(), state.CurrentEvent().eventName(), state.CurrentEvent().kund(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
                 state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
                 state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
     }
