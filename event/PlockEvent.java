@@ -7,7 +7,11 @@
 package lab6.event;
 
 import lab6.state.*;
-
+/**
+ * 
+ * Class for PlockEvent.
+ *
+ */
 public class PlockEvent extends Event {
 	private double tid;
 	private Kunder kund;

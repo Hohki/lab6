@@ -18,8 +18,7 @@ import lab6.view.StoreView;
 public class RunSim {
 	/**
 	 * Main method that starts the simulator
-	 * 
-	 * @param args
+	 * @param args args
 	 */
 	public static void main(String[] args) {
 		StoreState state = new StoreState(2, 5, 1.0, 0.5, 1.0, 2.0, 3.0, 1234, true, 10.0);

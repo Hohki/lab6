@@ -7,7 +7,11 @@
 package lab6.event;
 
 import lab6.state.*;
-
+/**
+ * 
+ * Class for AnkomstEvent
+ *
+ */
 public class AnkomstEvent extends Event {
 	private double tid;
 	private Kunder kund;

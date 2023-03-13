@@ -8,7 +8,11 @@ package lab6.event;
 
 import lab6.state.CustomerFactory;
 import lab6.state.Kunder;
-
+/**
+ * 
+ * Class for StartEvent.
+ *
+ */
 public class StartEvent extends Event {
 	/**
 	 * Constructs an object of type StartEvent, that begins the simulation at

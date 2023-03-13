@@ -20,10 +20,9 @@ public class Simulator {
 	private static StoreState state;
 
 	/**
-	 * Constructor for Simulator
-	 * 
-	 * @param state
-	 * @param view
+	 * Constructor for Simulator.
+	 * @param state state
+	 * @param view view
 	 */
 	public Simulator(StoreState state, StoreView view) {
 		Simulator.state = state;

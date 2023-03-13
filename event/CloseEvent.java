@@ -5,7 +5,11 @@
  * */
 
 package lab6.event;
-
+/**
+ * 
+ * Class for CloseEvent
+ *
+ */
 public class CloseEvent extends Event {
 	/**
 	 * A constructer for the CloseEvent, that creates an object of type

@@ -11,7 +11,11 @@ import lab6.event.StoppEvent;
 import lab6.event.CloseEvent;
 import lab6.state.*;
 import java.text.DecimalFormat;
-
+/**
+ * 
+ * Class for StoreView.
+ *
+ */
 public class StoreView extends View {
 	StoreState state;
 	private DecimalFormat df = new DecimalFormat("0.00");

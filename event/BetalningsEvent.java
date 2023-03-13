@@ -7,7 +7,11 @@
 package lab6.event;
 
 import lab6.state.Kunder;
-
+/**
+ * 
+ * Class for BetalningsEvent
+ *
+ */
 public class BetalningsEvent extends Event {
 	private double tid;
 

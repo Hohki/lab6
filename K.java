@@ -1,5 +1,9 @@
 package lab6;
-
+/**
+ * 
+ * Interface for constants.
+ *
+ */
 public interface K {
 
 	// Ex 1: (som sim1)

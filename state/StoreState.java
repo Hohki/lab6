@@ -7,7 +7,11 @@
 package lab6.state;
 
 import lab6.event.*;
-
+/**
+ * 
+ * Class for StoreState.
+ *
+ */
 public class StoreState extends State {
 	private KassaQueue KassaQueue;
 	private CustomerFactory createCustomer;
@@ -40,6 +44,8 @@ public class StoreState extends State {
 
 	/**
 	 * constructor for StoreState.
+	 * @param numberOfKassor numberOfKassor
+	 * @param maxCustomer maxCustomer
 	 * @param lambda lambda
 	 * @param pickMin pickMin
 	 * @param pickMax pickMax
@@ -219,6 +225,7 @@ public class StoreState extends State {
 
 	/**
 	 * Setter for if the store is open or not.
+	 * @param state state
 	 */
 
 	public void SetStoreState(boolean state) {
@@ -326,7 +333,7 @@ public class StoreState extends State {
 
 	/**
 	 * Increases the queue time.
-	 * @param time time
+	 * @param queueTime queueTime
 	 **/
 
 	public void IncreaseQueueTime(double queueTime) {

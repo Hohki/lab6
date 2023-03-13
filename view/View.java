@@ -9,14 +9,17 @@ package lab6.view;
 import java.util.Observer;
 import lab6.state.State;
 import java.util.Observable;
-
+/**
+ * 
+ * Class for View.
+ *
+ */
 public class View implements Observer {
 	protected State state;
 
 	/**
 	 * Constructor for View.
-	 * 
-	 * @param state
+	 * @param state state
 	 */
 	public View(State state) {
 		this.state = state;

@@ -5,7 +5,11 @@
  * */
 
 package lab6.event;
-
+/**
+ * 
+ * Class for StoppEvent.
+ *
+ */
 public class StoppEvent extends Event {
 	double tid;
 
