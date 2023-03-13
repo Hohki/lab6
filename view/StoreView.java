@@ -17,9 +17,9 @@ public class StoreView extends View {
 	private DecimalFormat df = new DecimalFormat("0.00");
 
 	/**
-	 * Konstruktor för StoreView.
+	 * Constructor for StoreView.
 	 * 
-	 * @param state
+	 * @param state State of store (open or closed)
 	 */
 	public StoreView(StoreState state) {
 		super(state);
@@ -29,8 +29,8 @@ public class StoreView extends View {
 	}
 
 	/**
-	 * @param o   Det state som blir observerat
-	 * @param arg Det event som ändrade på state
+	 * @param o   The state being observed
+	 * @param arg The event that changed the state
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
@@ -48,6 +48,7 @@ public class StoreView extends View {
 	}
 
 	/**
+	 * Prints out the parameters
 	 */
 	public void Parameters() {
 		System.out.println("PARAMETRAR");
@@ -66,6 +67,7 @@ public class StoreView extends View {
 	}
 
 	/**
+	 * The function that writes out the lines
 	 */
 	public void WriteLine() {
 		if (state.CurrentEvent() instanceof CloseEvent) {
@@ -88,6 +90,7 @@ public class StoreView extends View {
 	}
 
 	/**
+	 * The final print out
 	 */
 	public void EndPrint() {
 		System.out.println("RESULTAT");

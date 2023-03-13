@@ -13,10 +13,9 @@ public class AnkomstEvent extends Event {
 	private Kunder kund;
 
 	/**
-	 * Konstruktor för Ankomsthändelse
-	 * 
-	 * @param tid tid
-	 * @param kund kund
+	 * Constructor for ankomstEvent, it creates an object that holds a time and a customer*
+	 * @param tid Time when the event happened.
+	 * @param kund Customer that the event happened to.
 	 */
 
 	public AnkomstEvent(double tid, Kunder kund) {
@@ -26,8 +25,8 @@ public class AnkomstEvent extends Event {
 	}
 
 	/**
-	 * Kör ankomsteventet. Skapar nästa ankomsthändelse så länge butiken är öppen.
-	 * Skapar en plockhändelse om det finns plats för kunden i butiken.
+	 * Runs ankomsteventet. Creates the next instance of ankomstEvent while the store
+	 * is still open. Creates a plockEvent if there is place for customers in the store.
 	 *
 	 */
 

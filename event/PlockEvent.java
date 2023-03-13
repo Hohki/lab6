@@ -13,10 +13,11 @@ public class PlockEvent extends Event {
 	private Kunder kund;
 
 	/**
-	 * Konstruktor för Plockhändelse.
-	 * 
-	 * @param tid tid
-	 * @param kund tid
+	 * Constructer for a plockEvent object, that holds a time
+	 * and a customer.
+	 *
+	 * @param tid Time at which the event will occur.
+	 * @param kund Customer that does the event at given time.
 	 */
 	public PlockEvent(double tid, Kunder kund) {
 		super("Plock", tid, kund);
@@ -25,8 +26,8 @@ public class PlockEvent extends Event {
 	}
 
 	/**
-	 * Gör en betalningshändelse för en kund om det finns lediga kassor. Lägger
-	 * annars till kunden i kassakön.
+	 * Creates a betalningsEvent for a customer if there is empty space in cashiers. Else adds
+	 * customer to a kassaQueue.
 	 */
 	@Override
 	public void effect() {

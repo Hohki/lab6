@@ -14,7 +14,7 @@ public class View implements Observer {
 	protected State state;
 
 	/**
-	 * Konstruktor för View.
+	 * Constructor for View.
 	 * 
 	 * @param state
 	 */
@@ -23,8 +23,8 @@ public class View implements Observer {
 	}
 
 	/**
-	 * @param o   Det state som blir observerat
-	 * @param arg Det event som ändrade på state
+	 * @param o   The state being observed
+	 * @param arg The event that changed state
 	 */
 
 	@Override
