@@ -5,7 +5,6 @@ import lab6.event.Event;
 import lab6.event.Stopphändelse;
 import lab6.event.Stängningshändelse;
 import lab6.state.*;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 public class StoreView extends View {
