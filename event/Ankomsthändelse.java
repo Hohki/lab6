@@ -28,9 +28,7 @@ public class Ankomsthändelse extends Event {
 			} else {
 				state.IncreaseMissedCustomers();
 			}
-			state.notify(this);
-		} else {
-
 		}
+		state.notify(this);
 	}
 }

@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class OptimizeSim {
     public static int sim1(int numberOfKassor, int maxCustomer,
-                    double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed) {
-        StoreState state = new StoreState(numberOfKassor, maxCustomer, lambda, pickMin, pickMax, payMin, payMax, seed, false);
+                    double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed, double closeTime) {
+        StoreState state = new StoreState(numberOfKassor, maxCustomer, lambda, pickMin, pickMax, payMin, payMax, seed, false, closeTime);
         StoreView storeView = new StoreView(state);
         Simulator sim = new Simulator(state, storeView);
         sim.Run();
@@ -21,7 +21,7 @@ public class OptimizeSim {
         int missedCustomers;
         do {
             if (!(numberOfKassor > state.GetMaxCustomer())) {
-                missedCustomers = sim1(numberOfKassor + 1, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(), state.GetPayMin(), state.GetPayMax(), state.GetSeed());
+                missedCustomers = sim1(numberOfKassor + 1, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(), state.GetPayMin(), state.GetPayMax(), state.GetSeed(), state.GetCloseTime());
                 numberOfKassor++;
             } else {
                 break;
@@ -51,7 +51,7 @@ public class OptimizeSim {
 
     public static void main(String[] args) {
         StoreState state = new StoreState(2, 5,  1.0,
-                0.5, 1.0, 2.0, 3.0, 1234, true);
+                0.5, 1.0, 2.0, 3.0, 1234, true, 10.00);
         sim3(state);
     }
 }

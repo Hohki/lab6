@@ -30,9 +30,10 @@ public class StoreState extends State {
     private Event currentEvent;
     private boolean store;
     private boolean allowView = true;
+    final double closeTime;
 
     public StoreState(int numberOfKassor, int maxCustomer,
-                      double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed, boolean allowView) {
+                      double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed, boolean allowView, double closeTime) {
         this.Kassakö = new Kassakö();
         this.createCustomer = new CustomerFactory();
         this.nextArrival = new ExponentialRandomStream(lambda, seed);
@@ -55,7 +56,7 @@ public class StoreState extends State {
         this.freeKassor = numberOfKassor;
         this.queueTime = 0;
         this.allowView = allowView;
-
+        this.closeTime = closeTime;
     }
 
     public double GetLambda() {
@@ -206,6 +207,7 @@ public class StoreState extends State {
         return this.allowView;
     }
 
+    public double GetCloseTime() {return this.closeTime;}
     @Override
     public void notify(Event event) {
         setChanged();
