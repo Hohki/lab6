@@ -44,11 +44,12 @@ public class Kassakö {
 	public int size() {
 		return queue.size();
 	}
-	
+
+	@Override
 	public String toString() {
 		String s = "Queue: ";
-		for (int i = 0; i < queue.size(); i++) {
-			s = s + "(" + String.valueOf(queue.get(i)) + ") ";
+		for (int i = 0; i < this.queue.size(); i++) {
+			s = s + "(" + String.valueOf(this.queue.get(i).getID()) + ") ";
 		}
 		return s;
 	}

@@ -17,8 +17,7 @@ public class Ankomsthändelse extends Event {
 	public void effect() {
 		if(state.GetStore()) {
 			double nextArrival = state.GetNextArrival(this.tid);
-			CustomerFactory kund = new CustomerFactory();
-			Kunder newKund = kund.CreateCustomers();
+			Kunder newKund = new Kunder(new CustomerFactory().getNumber());
 			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 			eventQueue.addEvent(ankomsthändelse);
 			if (state.NumberOfCustomers() < state.GetMaxCustomer()) {
@@ -27,6 +26,7 @@ public class Ankomsthändelse extends Event {
 				Plockhändelse plockhändelse = new Plockhändelse(pickTime, this.kund);
 				eventQueue.addEvent(plockhändelse);
 			}
+			state.notify(this);
 		} else {
 
 		}

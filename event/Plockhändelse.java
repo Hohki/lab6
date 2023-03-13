@@ -20,6 +20,7 @@ public class Plockhändelse extends Event {
             double nextPay = this.state.GetNextPay(this.tid);
             Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, this.kund);
             eventQueue.addEvent(betalningshändelse);
+            state.notify(this);
         } else {
             state.GetQueue().add(kund());
             state.IncreaseNumberOfQueuedCustomers();

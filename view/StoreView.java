@@ -12,23 +12,23 @@ public class StoreView extends View {
     public StoreView(StoreState state) {
         super(state);
         this.state = state;
+        this.state.addObserver(this);
         Parameters();
     }
 
     @Override
-    public void update(Observable arg0, Object arg1) {
-        Event event = (Event) arg1;
+    public void update(Observable o, Object arg) {
         if (this.state.getALlowView()) {
-            WriteLine(event);
+            WriteLine();
 
+/*            if (event instanceof Stopphändelse) {
+                EndPrint();
+            }*/
+        } /*else {
             if (event instanceof Stopphändelse) {
                 EndPrint();
             }
-        } else {
-            if (event instanceof Stopphändelse) {
-                EndPrint();
-            }
-        }
+        }*/
     }
 
     public void Parameters() {
@@ -46,12 +46,11 @@ public class StoreView extends View {
         System.out.println("Tid Händelse  Kund  ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
     }
 
-    public void WriteLine(Object event) {
-        System.out.println(String.format
-                ("%6.2f %s  %s  %3d %7.2f % 4d % 4d  % 4d    % 4d  %6.2f    % 4d    %s",
-                        state.CurrentTime(), event.toString(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
-                        state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
-                        state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString()));
+    public void WriteLine() {
+        System.out.printf("%6.2f %s %s %3d %7.2f % 4d % 4d  % 4d    % 4d  %6.2f    % 4d    %s%n",
+                state.CurrentTime(), state.CurrentEvent().eventName(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
+                state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
+                state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
     }
 
     public void EndPrint() {

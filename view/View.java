@@ -10,9 +10,10 @@ public class View implements Observer {
 	public View(State state) {
 		this.state = state;
 	}
-	
+
+
 	@Override
-	public void update (Observable obj, Object arg) {
-		
+	public void update(Observable o, Object arg) {
+
 	}
 }
