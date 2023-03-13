@@ -7,6 +7,19 @@ public class EventQueue {
 
     public void addEvent(Event event) {
         this.eventQueue.add(event);
+        if (this.eventQueue.size() > 1) {
+            int j;
+            for (int i = 0; i < this.eventQueue.size(); i++) {
+
+                Event tmpEvent = this.eventQueue.get(i);
+                j = i + 1;
+                while ((j > 0) && this.eventQueue.get(j - 1).tid() < tmpEvent.tid()) {
+                    this.eventQueue.set(j, this.eventQueue.get(j - 1));
+                    j--;
+                }
+                this.eventQueue.set(j-1, tmpEvent);
+            }
+        }
     }
 
     public void sortEventQueue() {
@@ -14,15 +27,20 @@ public class EventQueue {
         så att den första event i listan är de som kommer att
         hända tidigast
         * */
-        int j;
-        for (int i = 0; i < this.eventQueue.size(); i++) {
-            Event tmpEvent = this.eventQueue.get(i);
-            j = i+1;
-            do {
-                this.eventQueue.set(j, this.eventQueue.get(j-1));
-                j--;
-            } while ((j > 0) && this.eventQueue.get(j-1).tid() > tmpEvent.tid());
-            this.eventQueue.set(j, tmpEvent);
+        if (this.eventQueue.size() > 1) {
+            int j;
+            for (int i = 0; i < this.eventQueue.size(); i++) {
+
+                Event tmpEvent = this.eventQueue.get(i);
+                j = i + 1;
+                while ((j > 0) && this.eventQueue.get(j - 1).tid() < tmpEvent.tid()) {
+                    this.eventQueue.set(j, this.eventQueue.get(j - 1));
+                    j--;
+                }
+                this.eventQueue.set(j-1, tmpEvent);
+                }
+        } else {
+            System.out.println("List has no elements or just one element...");
         }
     }
 
