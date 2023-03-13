@@ -1,3 +1,9 @@
+/**
+ * @author Albin
+ * @author Khaled
+ * @author Gabriel
+ * */
+
 package lab6.view;
 
 import java.util.Observer;

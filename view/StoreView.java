@@ -1,7 +1,12 @@
+/**
+ * @author Albin
+ * @author Khaled
+ * @author Gabriel
+ * */
+
 package lab6.view;
 
 import java.util.Observable;
-import lab6.event.Event;
 import lab6.event.Stopphändelse;
 import lab6.event.Stängningshändelse;
 import lab6.state.*;

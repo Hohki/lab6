@@ -1,10 +1,11 @@
+/**
+ * Albin, Khaled, Gabriel
+ * */
+
 package lab6.event;
 
-import lab6.Simulator;
 import lab6.state.Kunder;
-import lab6.state.State;
 import lab6.state.StoreState;
-import lab6.tools.Pair;
 
 public abstract class Event {
 	protected StoreState state;

@@ -1,3 +1,9 @@
+/**
+ * @author Albin
+ * @author Khaled
+ * @author Gabriel
+ * */
+
 package lab6.state;
 
 import lab6.event.*;
@@ -33,6 +39,17 @@ public class StoreState extends State {
     private boolean allowView = true;
     final double closeTime;
 
+    /**
+     * @param lambda
+     * @param pickMin
+     * @param pickMax
+     * @param payMin
+     * @param payMax
+     * @param seed
+     * @param allowView
+     * @param closeTime
+     * @return nothing
+     **/
     public StoreState(int numberOfKassor, int maxCustomer,
                       double lambda, double pickMin, double pickMax, double payMin, double payMax, long seed, boolean allowView, double closeTime) {
         this.Kassakö = new Kassakö();
@@ -62,165 +79,360 @@ public class StoreState extends State {
     }
 
 
+    /**
+     * @param Inget
+     * @return lambda
+     * */
     public double GetLambda() {
         return this.lambda;
     }
+
+    /**
+     * @param Inget
+     * @return pickMax
+     * */
 
     public double GetPlockMax() {
         return this.pickMax;
     }
 
+    /**
+     * @param Inget
+     * @return pickMin
+     * */
+
     public double GetPlockMin() {
         return this.pickMin;
     }
+
+    /**
+     * @param Inget
+     * @return payMax
+     * */
 
     public double GetPayMax() {
         return this.payMax;
     }
 
+    /**
+     * @param Inget
+     * @return payMin
+     * */
+
     public double GetPayMin() {
         return this.payMin;
     }
+
+    /**
+     * @param Inget
+     * @return customer
+     **/
 
     public int GetNumberOfCustomers() {
         return this.customer;
     }
 
+    /**
+     * @param Inget
+     * @return customrer + 1
+     * */
+
     public void IncreaseNumberOfCustomer() {
         this.customer = this.customer + 1;
     }
+
+    /**
+     * @param Inget
+     * @return payedCustomers
+     * */
 
     public int NumberOfPayedCustomers() {
         return this.payedCustomers;
     }
 
+    /**
+     * @param Inget
+     * @return payedCustomers +1
+     * */
+
     public void IncreaseNumberOfPayedCustomers() {
         this.payedCustomers = this.payedCustomers + 1;
     }
+
+    /**
+     * @param Inget
+     * @return queuedCustomers
+     * */
 
     public int NumberOfQueuedCustomers() {
         return this.queuedCustomers;
     }
 
+    /**
+     * @param Inget
+     * @return queuedCustomers + 1
+     * */
+
     public void IncreaseNumberOfQueuedCustomers() {
         this.queuedCustomers = this.queuedCustomers + 1;
     }
+
+    /**
+     * @param Inget
+     * @return kassakö
+     * */
 
     public Kassakö CurrentlyQueued() {
         return this.Kassakö;
     }
 
+    /**
+     * @param Inget
+     * @return numberOfKassor
+     * */
+
     public int GetNumberOfKassor() {
         return this.numberOfKassor;
     }
+
+    /**
+     * @param Inget
+     * @return maxCustomer
+     * */
 
     public int GetMaxCustomer() {
         return this.maxCustomer;
     }
 
+    /**
+     * @param Inget
+     * @return seed
+     * */
+
     public long GetSeed() {
         return this.seed;
     }
+
+    /**
+     * @param Inget
+     * @return store
+     * */
 
     public boolean GetStore() {
         return this.store;
     }
 
+    /**
+     * @param Inget
+     * @return Inget
+     * */
+
     public void SetStoreState(boolean state) {
         this.store = state;
     }
+
+    /**
+     * @param Inget
+     * @return kassakö
+     * */
 
     public Kassakö GetQueue() {
         return this.Kassakö;
     }
 
+    /**
+     * @param time
+     * @return nextArrival.next() + time
+     * */
+
     public double GetNextArrival(double time) {
         return this.nextArrival.next() + time;
     }
+
+    /**
+     * @param time
+     * @return nextPlock.next() + time
+     * */
 
     public double GetNextPlock(double time) {
         return this.nextPlock.next() + time;
     }
 
+    /**
+     * @param time
+     * @return nextPay.next() + time
+     * */
+
     public double GetNextPay(double time) {
         return this.nextPay.next() + time;
     }
 
-    public int NumberOfCustomers() {
-        return this.customer;
-    }
+    /**
+     * @param inget
+     * @return customer + 1
+     * */
 
     public void IncreaseCustomers() {
         this.customer = this.customer + 1;
     }
 
+    /**
+     * @param inget
+     * @return customer - 1
+     * */
+
     public void DecreaseCustomers() {
         this.customer = this.customer - 1;
     }
+
+    /**
+     * @param inget
+     * @return missedCustomers
+     * */
 
     public int MissedCustomers() {
         return this.missedCustomers;
     }
 
+    /**
+     * @param inget
+     * @return missedCustomers + 1
+     * */
+
     public void IncreaseMissedCustomers() {
         this.missedCustomers = this.missedCustomers + 1;
     }
+
+    /**
+     * @param inget
+     * @return freeKassorTime
+     **/
 
     public double GetFreeKassorTime() {
         return this.freeKassorTime;
     }
 
+    /**
+     * @param time
+     * @return freeKassorTime + time
+     **/
+
     public void IncreaseFreeKassorTime(double time) {
         this.freeKassorTime = this.freeKassorTime + time;
     }
+
+    /**
+     * @param inget
+     * @return queueTime
+     **/
 
     public double GetQueueTime() {
         return this.queueTime;
     }
 
+    /**
+     * @param queueTime
+     * @return queueTime + queueTime
+     **/
+
     public void IncreaseQueueTime(double queueTime) {
         this.queueTime = this.queueTime + queueTime;
     }
+
+    /**
+     * @param inget
+     * @return freeKassor
+     **/
 
     public int FreeKassor() {
         return this.freeKassor;
     }
 
+    /**
+     * @param inget
+     * @return freeKassor + 1
+     **/
+
     public void IncreaseFreeKassor() {
         this.freeKassor = this.freeKassor + 1;
     }
+
+    /**
+     * @param inget
+     * @return freeKassor - 1
+     **/
 
     public void DecreaseFreeKassor() {
         this.freeKassor = this.freeKassor - 1;
     }
 
+    /**
+     * @param inget
+     * @return currentEvent
+     **/
+
     public Event CurrentEvent() {
         return currentEvent;
     }
+
+    /**
+     * @param currentEvent
+     * @return inget
+     **/
 
     public void SetCurrentEvent(Event currentEvent) {
         this.currentEvent = currentEvent;
     }
 
+    /**
+     * @param inget
+     * @return lastPay
+     **/
+
     public double getLastPay() {
         return this.lastPay;
     }
 
+    /**
+     * @param inget
+     * @return allowView
+     **/
+
     public boolean getALlowView() {
         return this.allowView;
     }
+
+    /**
+     * @param inget
+     * @return lastEvent
+     **/
     
     public double lastEvent() {
     	return this.lastEvent;
     }
+
+    /**
+     * @param time
+     * @return lastEvent
+     **/
     
     public void setLastEvent(double time) {
     	lastEvent = time;
     }
 
+    /**
+     * @param inget
+     * @return closeTime
+     **/
+
     public double GetCloseTime() {
     	return this.closeTime;
     }
+
+    /**
+     * @param event
+     * @return inget
+     **/
     
     @Override
     public void notify(Event event) {

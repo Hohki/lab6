@@ -1,3 +1,9 @@
+/**
+ * @author Albin
+ * @author Khaled
+ * @outhor Gabriel
+ * */
+
 package lab6.state;
 
 public class Kunder {

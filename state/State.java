@@ -1,7 +1,12 @@
+/**
+ * @author Albin
+ * @author Khaled
+ * @author Gabriel
+ * */
+
 package lab6.state;
 
 import lab6.event.Event;
-
 import java.util.Observable;
 
 public class State extends Observable {
