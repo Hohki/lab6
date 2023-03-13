@@ -8,7 +8,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96fc0f3a-eb85-4ef0-82c7-06de87827256" name="Changes" comment="" />
+    <list default="true" id="96fc0f3a-eb85-4ef0-82c7-06de87827256" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptimizeSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/OptimizeSim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/OptimizeSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/OptimizeSim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/RunSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/RunSim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/Simulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/Simulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Ankomsthändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Ankomsthändelse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Betalningshändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Betalningshändelse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/EventQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/EventQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Plockhändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Plockhändelse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Starthändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Starthändelse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Stopphändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Stopphändelse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Stängningshändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Stängningshändelse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/CustomerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/CustomerFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/ExponentialRandomStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/ExponentialRandomStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kassakö.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kassakö.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kunder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kunder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/StoreState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/StoreState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/UniformRandomStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/UniformRandomStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/tools/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/view/StoreView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/view/StoreView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/view/View.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +98,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/event/Stopphändelse.java</url>
           <line>13</line>
-          <properties class="lab6.event.Stopphändelse" method="effect">
+          <properties class="lab6.event.Stopphändelse" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
