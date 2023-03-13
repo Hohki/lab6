@@ -16,7 +16,24 @@ public class Betalningshändelse extends Event{
 
 	@Override
 	public void effect() {
-		state.notify(this);
+		state.IncreaseNumberOfPayedCustomers();
+		state.DecreaseCustomers();
+		//Delete current costumer? Queue times?
+		if (state.FreeKassor() > 0) {
+            state.IncreaseFreeKassor();
+            
+        } else {
+            double nextPay = this.state.GetNextPay(this.tid);
+        	Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, state.ObjectFirst());				//First in queue goes to pay
+            eventQueue.addEvent(betalningshändelse);																	
+            state.removeFirst();																						//Decreases queue
+            state.notify(this);
+
+        }
+		
+		if (state.GetStore() == false && state.NumberOfCustomers() == 0)
+			Stopphändelse stopphändelse = new Stopphändelse(null, this.time);											//Adds stop to next in queue if store is closed and empty
+        	eventQueue.addEvent(stopphändelse);
 	}
 
 }
