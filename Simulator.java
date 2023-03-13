@@ -34,7 +34,7 @@ public class Simulator {
 	 * har aktiverats.
 	 */
 	public void Run() {
-		Event currentEvent = new Starthändelse(0.0);
+		Event currentEvent = new StartEvent(0.0);
 
 		// Uncomment when code is done
 		while (!state.simStop) {
@@ -47,7 +47,7 @@ public class Simulator {
 				currentEvent.getEventQueue().sortEventQueue();
 				currentEvent = currentEvent.getEventQueue().getFirst();
 			} else {
-				currentEvent = new Stopphändelse(state.CurrentTime());
+				currentEvent = new StoppEvent(state.CurrentTime());
 				currentEvent.setState(state);
 				state.SetCurrentEvent(currentEvent);
 				currentEvent.effect();

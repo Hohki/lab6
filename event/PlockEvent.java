@@ -8,7 +8,7 @@ package lab6.event;
 
 import lab6.state.*;
 
-public class Plockhändelse extends Event {
+public class PlockEvent extends Event {
 	private double tid;
 	private Kunder kund;
 
@@ -18,7 +18,7 @@ public class Plockhändelse extends Event {
 	 * @param tid
 	 * @param kund
 	 */
-	public Plockhändelse(double tid, Kunder kund) {
+	public PlockEvent(double tid, Kunder kund) {
 		super("Plock", tid, kund);
 		this.tid = tid;
 		this.kund = kund;
@@ -34,8 +34,8 @@ public class Plockhändelse extends Event {
 		if (state.FreeKassor() > 0) {
 			state.DecreaseFreeKassor();
 			double nextPay = this.state.GetNextPay(this.tid);
-			Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, this.kund);
-			eventQueue.addEvent(betalningshändelse);
+			BetalningsEvent betalningsEvent = new BetalningsEvent(nextPay, this.kund);
+			eventQueue.addEvent(betalningsEvent);
 		} else {
 			state.GetQueue().add(this.kund);
 			state.IncreaseNumberOfQueuedCustomers();

@@ -6,7 +6,7 @@
 
 package lab6.event;
 
-public class Stopphändelse extends Event {
+public class StoppEvent extends Event {
 	double tid;
 
 	/**
@@ -14,7 +14,7 @@ public class Stopphändelse extends Event {
 	 * 
 	 * @param tid
 	 */
-	public Stopphändelse(double tid) {
+	public StoppEvent(double tid) {
 		super("Stopp", tid);
 	}
 

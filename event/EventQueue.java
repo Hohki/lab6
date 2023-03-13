@@ -22,9 +22,7 @@ public class EventQueue {
 
 	/**
 	 * Sorterar eventQueue.
-	 * 
-	 * @param Inget
-	 * @return Inget
+	 *
 	 */
 	public void sortEventQueue() {
 		/*

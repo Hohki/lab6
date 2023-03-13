@@ -9,13 +9,13 @@ package lab6.event;
 import lab6.state.CustomerFactory;
 import lab6.state.Kunder;
 
-public class Starthändelse extends Event {
+public class StartEvent extends Event {
 	/**
 	 * Konstruktor för Starthändelse.
 	 * 
 	 * @param tid
 	 */
-	public Starthändelse(double tid) {
+	public StartEvent(double tid) {
 		super("Start", tid);
 	}
 
@@ -29,8 +29,8 @@ public class Starthändelse extends Event {
 		eventQueue.addEvent(this);
 		double nextArrival = state.GetNextArrival(this.tid());
 		Kunder newKund = new Kunder(new CustomerFactory().getNumber());
-		Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
-		eventQueue.addEvent(ankomsthändelse);
-		eventQueue.addEvent(new Stängningshändelse(state.GetCloseTime()));
+		AnkomstEvent ankomstEvent = new AnkomstEvent(nextArrival, newKund);
+		eventQueue.addEvent(ankomstEvent);
+		eventQueue.addEvent(new CloseEvent(state.GetCloseTime()));
 	}
 }

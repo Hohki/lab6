@@ -2,7 +2,6 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
-    <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -11,11 +10,15 @@
     <list default="true" id="96fc0f3a-eb85-4ef0-82c7-06de87827256" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OptimizeSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/OptimizeSim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/Ankomsthändelse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/AnkomstEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/Betalningshändelse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/BetalningsEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/EventQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/EventQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/Plockhändelse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/PlockEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/Starthändelse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/StartEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/Stopphändelse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/StoppEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/Stängningshändelse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event/CloseEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/OptimizeSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/OptimizeSim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/RunSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/RunSim.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/Simulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/Simulator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Ankomsthändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Ankomsthändelse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/event/Betalningshändelse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/event/Betalningshändelse.class" afterDir="false" />
@@ -30,16 +33,21 @@
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kassakö.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kassakö.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kunder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/Kunder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/StoreState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/StoreState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/state/UniformRandomStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/state/UniformRandomStream.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/tools/Pair.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/view/StoreView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/view/StoreView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab6/lab6/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/lab6/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/StoreState.java" beforeDir="false" afterPath="$PROJECT_DIR$/state/StoreState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/StoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/StoreView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="4" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,9 +104,9 @@
           <option name="timeStamp" value="42" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/event/Stopphändelse.java</url>
-          <line>13</line>
-          <properties class="lab6.event.Stopphändelse" method="&lt;init&gt;">
+          <url>file://$PROJECT_DIR$/event/StoppEvent.java</url>
+          <line>24</line>
+          <properties class="lab6.event.StoppEvent" method="effect">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

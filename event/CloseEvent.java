@@ -6,13 +6,13 @@
 
 package lab6.event;
 
-public class Stängningshändelse extends Event {
+public class CloseEvent extends Event {
 	/**
 	 * Konstruktor för Stängningshändelse.
 	 * 
 	 * @param tid
 	 */
-	public Stängningshändelse(double tid) {
+	public CloseEvent(double tid) {
 		super("Stängning", tid);
 	}
 

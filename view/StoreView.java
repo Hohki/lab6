@@ -7,8 +7,8 @@
 package lab6.view;
 
 import java.util.Observable;
-import lab6.event.Stopphändelse;
-import lab6.event.Stängningshändelse;
+import lab6.event.StoppEvent;
+import lab6.event.CloseEvent;
 import lab6.state.*;
 import java.text.DecimalFormat;
 
@@ -37,11 +37,11 @@ public class StoreView extends View {
 		if (this.state.getALlowView()) {
 			WriteLine();
 
-			if (arg instanceof Stopphändelse) {
+			if (arg instanceof StoppEvent) {
 				EndPrint();
 			}
 		} else {
-			if (arg instanceof Stopphändelse) {
+			if (arg instanceof StoppEvent) {
 				EndPrint();
 			}
 		}
@@ -70,13 +70,13 @@ public class StoreView extends View {
 	 * @param Inget
 	 */
 	public void WriteLine() {
-		if (state.CurrentEvent() instanceof Stängningshändelse) {
+		if (state.CurrentEvent() instanceof CloseEvent) {
 			System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % 4.2f %5s %s %n",
 					state.CurrentTime(), state.CurrentEvent().eventName(), "---", state.GetStore() ? "Ö" : "S",
 					state.FreeKassor(), state.GetFreeKassorTime(), state.GetNumberOfCustomers(),
 					state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
 					state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
-		} else if (state.CurrentEvent() instanceof Stopphändelse) {
+		} else if (state.CurrentEvent() instanceof StoppEvent) {
 			System.out.println(" " + df.format(state.CurrentTime()) + " Stop");
 		} else {
 			System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % -6.2f %5s %s %n",

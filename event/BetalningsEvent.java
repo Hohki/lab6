@@ -8,7 +8,7 @@ package lab6.event;
 
 import lab6.state.Kunder;
 
-public class Betalningshändelse extends Event {
+public class BetalningsEvent extends Event {
 	private double tid;
 
 	/**
@@ -17,7 +17,7 @@ public class Betalningshändelse extends Event {
 	 * @param tid
 	 * @param kund
 	 */
-	public Betalningshändelse(double tid, Kunder kund) {
+	public BetalningsEvent(double tid, Kunder kund) {
 		super("Betalning", tid, kund);
 		this.tid = tid;
 	}
@@ -26,9 +26,7 @@ public class Betalningshändelse extends Event {
 	 * Lägger till antal kunder som betalat Ökar antal lediga kassor om ingen står i
 	 * kön Lägger annars till en ny betalningshändelse för den kund som står först i
 	 * kön.
-	 * 
-	 * @param Inget
-	 * @return Inget
+	 *
 	 */
 	@Override
 	public void effect() {
@@ -41,13 +39,13 @@ public class Betalningshändelse extends Event {
 
 		} else {
 			double nextPay = state.GetNextPay(this.tid);
-			Betalningshändelse betalningshändelse = new Betalningshändelse(nextPay, state.GetQueue().first()); // First
+			BetalningsEvent betalningsEvent = new BetalningsEvent(nextPay, state.GetQueue().first()); // First
 																												// in
 																												// queue
 																												// goes
 																												// to
 																												// pay
-			eventQueue.addEvent(betalningshändelse);
+			eventQueue.addEvent(betalningsEvent);
 			state.GetQueue().removeFirst(); // Decreases queue
 		}
 	}
