@@ -14,10 +14,7 @@ public class State extends Observable {
 	protected double simTime;
 
 	/**
-	 * Konstruktor för State.
-	 * 
-	 * @param Inget
-	 * @return Inget
+	 * Konstruktor för State
 	 */
 	public State() {
 		this.simStop = false;
@@ -27,7 +24,6 @@ public class State extends Observable {
 	 * Sätter simTime till vad time är.
 	 * 
 	 * @param time
-	 * @return Inget
 	 */
 	public void SetSimTime(double time) {
 		this.simTime = time;
@@ -35,7 +31,6 @@ public class State extends Observable {
 
 	/**
 	 * @param event
-	 * @return inget
 	 */
 	public void notify(Event event) {
 
@@ -43,8 +38,7 @@ public class State extends Observable {
 
 	/**
 	 * Returnerar nuvarande tiden.
-	 * 
-	 * @param Nothing
+	 *
 	 * @return simTime
 	 */
 
@@ -54,9 +48,7 @@ public class State extends Observable {
 
 	/**
 	 * Sätter stopSim till true.
-	 * 
-	 * @param Nothing
-	 * @return Nothing
+	 *
 	 */
 
 	public void stopSim() {

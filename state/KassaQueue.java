@@ -19,7 +19,6 @@ public class KassaQueue {
 	 * Lägger till en Kund i Kassakö.
 	 * 
 	 * @param arg0
-	 * @return nothing
 	 */
 
 	public void add(Kunder arg0) {
@@ -31,9 +30,8 @@ public class KassaQueue {
 
 	/**
 	 * Returnerar kunden längs fram i Kassakö
-	 * 
-	 * @param nothing
-	 * @return get(0) or throws a NoSuchElementException()
+	 *
+	 * @return get(0)
 	 */
 
 	public Kunder first() throws NoSuchElementException {
@@ -46,8 +44,7 @@ public class KassaQueue {
 
 	/**
 	 * Returnerar om Kassakö är tom eller inte.
-	 * 
-	 * @param nothing
+	 *
 	 * @return isEmpty()
 	 */
 
@@ -57,8 +54,7 @@ public class KassaQueue {
 
 	/**
 	 * Returnerar största storleken av Kassakö.
-	 * 
-	 * @param nothing
+	 *
 	 * @return maxsize
 	 **/
 	public int maxSize() {
@@ -67,9 +63,7 @@ public class KassaQueue {
 
 	/**
 	 * Tar bort första Kunden i Kassakö
-	 * 
-	 * @param nothing
-	 * @return nothing
+	 *
 	 **/
 
 	public void removeFirst() throws NoSuchElementException {
@@ -83,8 +77,7 @@ public class KassaQueue {
 
 	/**
 	 * Returnerar storleken på Kassakö.
-	 * 
-	 * @param nothing
+	 *
 	 * @return size()
 	 **/
 
@@ -94,8 +87,7 @@ public class KassaQueue {
 
 	/**
 	 * Returnerar Kassakö som en String.
-	 * 
-	 * @param nothing
+	 *
 	 * @return s
 	 **/
 
