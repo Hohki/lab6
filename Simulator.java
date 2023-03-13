@@ -1,9 +1,6 @@
 package lab6;
 
-import lab6.event.Ankomsthändelse;
-import lab6.event.Event;
-import lab6.event.Starthändelse;
-import lab6.event.Stängningshändelse;
+import lab6.event.*;
 import lab6.state.StoreState;
 import lab6.view.StoreView;
 import lab6.view.View;
@@ -21,14 +18,22 @@ public class Simulator {
 				Event currentEvent = new Starthändelse(0.0);
 
 				//Uncomment when code is done
-			while (!state.simStop && currentEvent != null) {
-				currentEvent.setState(state);
-				state.SetCurrentEvent(currentEvent);
-				state.SetSimTime(currentEvent.tid());
-				currentEvent.effect();
-				currentEvent.getEventQueue().removeFirstEvent();
-				currentEvent.getEventQueue().sortEventQueue();
-				currentEvent = currentEvent.getEventQueue().getFirst();
+			while (!state.simStop) {
+				if (currentEvent != null) {
+					currentEvent.setState(state);
+					state.SetCurrentEvent(currentEvent);
+					state.SetSimTime(currentEvent.tid());
+					System.out.println(currentEvent.toString());
+					currentEvent.effect();
+					currentEvent.getEventQueue().removeFirstEvent();
+					currentEvent.getEventQueue().sortEventQueue();
+					currentEvent = currentEvent.getEventQueue().getFirst();
+				} else {
+					currentEvent = new Stopphändelse(state.CurrentTime());
+					currentEvent.setState(state);
+					state.SetCurrentEvent(currentEvent);
+					currentEvent.effect();
+				}
 			}
 	}
 }

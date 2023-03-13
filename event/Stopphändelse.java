@@ -7,7 +7,6 @@ import lab6.tools.Pair;
 
 public class Stopphändelse extends Event{
 	double tid;
-	Kunder kund;
 	public Stopphändelse(double tid) {
 		super("Stopp", tid);
 	}

@@ -57,6 +57,10 @@ public class EventQueue {
         return this.eventQueue.isEmpty();
     }
 
+    public int size() {
+        return this.eventQueue.size();
+    }
+
     public Event getFirst() {
         if (this.eventQueue.size()>0) {
             return this.eventQueue.get(0);
