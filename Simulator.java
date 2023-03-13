@@ -21,7 +21,7 @@ public class Simulator {
 				Event currentEvent = new Starthändelse(0.0);
 
 				//Uncomment when code is done
-			while (!state.simStop) {
+			while (!state.simStop && currentEvent != null) {
 				currentEvent.setState(state);
 				state.SetCurrentEvent(currentEvent);
 				state.SetSimTime(currentEvent.tid());
@@ -29,7 +29,6 @@ public class Simulator {
 				currentEvent.getEventQueue().removeFirstEvent();
 				currentEvent.getEventQueue().sortEventQueue();
 				currentEvent = currentEvent.getEventQueue().getFirst();
-				state.notifyObservers();
 			}
 	}
 }
