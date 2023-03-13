@@ -6,9 +6,6 @@ package lab6.event;
 
 import lab6.state.CustomerFactory;
 import lab6.state.Kunder;
-import lab6.state.State;
-import lab6.state.StoreState;
-import lab6.tools.Pair;
 
 public class Starthändelse extends Event{
 	public Starthändelse(double tid) {
