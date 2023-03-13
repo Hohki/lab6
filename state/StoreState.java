@@ -219,6 +219,7 @@ public class StoreState extends State {
 
     @Override
     public void notify(Event event) {
+        System.out.println("Storestate has changed...");
         if (event instanceof Betalningshändelse) {
             this.lastPay = event.tid();
         }
