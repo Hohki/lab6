@@ -223,11 +223,10 @@ public class StoreState extends State {
     
     @Override
     public void notify(Event event) {
-    	
     	if (event instanceof Betalningshändelse) {
 			this.lastPay = event.tid();
 		}
-    	if (this.store && !(event instanceof Stopphändelse)) {
+    	if (!(event instanceof Stopphändelse)) {
 			double time = event.tid() - lastEvent();
 			
 			double queueTime = this.GetQueue().size() * time;
