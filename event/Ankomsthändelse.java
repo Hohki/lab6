@@ -25,6 +25,8 @@ public class Ankomsthändelse extends Event {
 				double pickTime = state.GetNextPlock(this.tid);
 				Plockhändelse plockhändelse = new Plockhändelse(pickTime, this.kund);
 				eventQueue.addEvent(plockhändelse);
+			} else {
+				state.IncreaseMissedCustomers();
 			}
 			state.notify(this);
 		} else {
