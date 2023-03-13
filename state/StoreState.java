@@ -49,7 +49,7 @@ public class StoreState extends State {
         this.payMin = payMin;
         this.payMax = payMax;
         this.seed = seed;
-        this.lastEvent = lastEvent;
+        this.lastEvent = 0;
 
         this.lastPay = 0.0d;
         this.customer = 0;
@@ -217,9 +217,16 @@ public class StoreState extends State {
     	lastEvent = time;
     }
 
-    public double GetCloseTime() {return this.closeTime;}
+    public double GetCloseTime() {
+    	return this.closeTime;
+    }
+    
     @Override
     public void notify(Event event) {
+    	
+    	if (event instanceof Betalningshändelse) {
+			this.lastPay = event.tid();
+		}
     	if (this.store && !(event instanceof Stopphändelse)) {
 			double time = event.tid() - lastEvent();
 			
