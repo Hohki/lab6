@@ -8,9 +8,9 @@ import lab6.tools.Pair;
 
 public abstract class Event {
 	protected StoreState state;
-	private String str;
 	protected static EventQueue eventQueue = new EventQueue();
-	protected double tid;
+	private double tid;
+	private String str;
 	private Kunder kund;
 
 	public Event(String str, double tid, Kunder kund) {
@@ -24,11 +24,6 @@ public abstract class Event {
 		this.tid = tid;
 	}
 
-	public Event(String str, double tid, StoreState state) {
-		this.str = str;
-		this.tid = tid;
-		this.state = state;
-	}
 
 	public Event(String str) {
 		this.str = str;
