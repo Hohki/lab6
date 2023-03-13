@@ -8,7 +8,11 @@ package lab6.event;
 
 import lab6.state.Kunder;
 import lab6.state.StoreState;
-
+/**
+ * 
+ * abstract Event
+ *
+ */
 public abstract class Event {
 	protected StoreState state;
 	protected static EventQueue eventQueue = new EventQueue();
@@ -18,10 +22,9 @@ public abstract class Event {
 
 	/**
 	 * Konstruktor för Event
-	 * 
-	 * @param str
-	 * @param tid
-	 * @param kund
+	 * @param str str
+	 * @param tid tid
+	 * @param kund kund
 	 */
 	public Event(String str, double tid, Kunder kund) {
 		this.str = str;
@@ -32,8 +35,8 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param str
-	 * @param tid
+	 * @param str str
+	 * @param tid tid
 	 */
 
 	public Event(String str, double tid) {
@@ -44,7 +47,7 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param str
+	 * @param str str
 	 */
 
 	public Event(String str) {
@@ -54,19 +57,21 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param state
+	 * @param state state
 	 */
 
 	public Event(StoreState state) {
 		this.state = state;
 	}
-
+	/**
+	 * Abstract effect
+	 */
 	public abstract void effect();
 
 	/**
 	 * Sätter state till state.
 	 * 
-	 * @param state
+	 * @param state state
 	 */
 
 	public void setState(StoreState state) {

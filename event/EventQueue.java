@@ -7,14 +7,18 @@
 package lab6.event;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * Class EventQueue
+ *
+ */
 public class EventQueue {
 	private ArrayList<Event> eventQueue = new ArrayList<Event>();
 
 	/**
 	 * Lägger till event i eventQueue.
 	 * 
-	 * @param event
+	 * @param event event
 	 */
 	public void addEvent(Event event) {
 		this.eventQueue.add(event);
@@ -45,7 +49,7 @@ public class EventQueue {
 	/**
 	 * Tar bort ett event från eventQueue vid ett visst index.
 	 * 
-	 * @param index
+	 * @param index index
 	 * @return tmpEvent
 	 */
 	public Event removeEvent(int index) {
