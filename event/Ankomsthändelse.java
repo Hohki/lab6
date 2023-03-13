@@ -1,3 +1,8 @@
+/**
+ * Albin, Khaled, Gabriel
+ * */
+
+
 package lab6.event;
 
 import lab6.state.*;
@@ -20,7 +25,7 @@ public class Ankomsthändelse extends Event {
 			Kunder newKund = new Kunder(new CustomerFactory().getNumber());
 			Ankomsthändelse ankomsthändelse = new Ankomsthändelse(nextArrival, newKund);
 			eventQueue.addEvent(ankomsthändelse);
-			if (state.NumberOfCustomers() < state.GetMaxCustomer()) {
+			if (state.GetNumberOfCustomers() < state.GetMaxCustomer()) {
 				state.IncreaseCustomers();
 				double pickTime = state.GetNextPlock(this.tid);
 				Plockhändelse plockhändelse = new Plockhändelse(pickTime, this.kund);

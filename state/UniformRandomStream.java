@@ -1,4 +1,8 @@
 
+/**
+ * Albin, Khaled, Gabriel
+ * */
+
 package lab6.state;
 
 import java.util.Random;

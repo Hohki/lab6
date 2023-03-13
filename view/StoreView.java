@@ -1,3 +1,7 @@
+/**
+ * Albin, Khaled, Gabriel
+ * */
+
 package lab6.view;
 
 import java.util.Observable;
