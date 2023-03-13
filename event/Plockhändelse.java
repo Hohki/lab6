@@ -1,5 +1,7 @@
 /**
- * Albin, Khaled, Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
 
 package lab6.event;
@@ -9,13 +11,20 @@ import lab6.state.*;
 public class Plockhändelse extends Event {
     private double tid;
     private Kunder kund;
-
+    /**
+     * Konstruktor för Plockhändelse.
+     * @param tid
+     * @param kund
+     */
     public Plockhändelse(double tid, Kunder kund) {
         super("Plock", tid, kund);
         this.tid = tid;
         this.kund = kund;
     }
-
+    /**
+     * Gör en betalningshändelse för en kund om det finns lediga kassor.
+     * Lägger annars till kunden i kassakön.
+     */
     @Override
     public void effect() {
         state.notify(this);

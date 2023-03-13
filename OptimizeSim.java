@@ -17,19 +17,30 @@ public class OptimizeSim {
     }
 
     public static int sim2(StoreState state) {
-        int antalKassor = state.GetMaxCustomer();
-        int missadeCustomers = sim1(antalKassor, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(),
-                state.GetPayMin(),state.GetPayMax(), state.GetSeed(), state.GetCloseTime());
-        System.out.println("Minsta antal kassor som ger minimalt antal missade " +"(" + state.MissedCustomers() + ")" +": " + antalKassor );
-        return antalKassor;
+        int antalKassor = 0;
+        int best = 1000;
+        int previousMissed = 1000;
+        int bestMissed = 0;
+        while (antalKassor <= state.GetMaxCustomer()) {
+        	int missadeCustomers = sim1(antalKassor, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(),
+            state.GetPayMin(),state.GetPayMax(), state.GetSeed(), state.GetCloseTime());
+        	if (missadeCustomers < previousMissed) {
+        		bestMissed = missadeCustomers;
+        		previousMissed = missadeCustomers;
+        		best = antalKassor;
+        	}
+        	antalKassor++;
+        }
+        System.out.println("Minsta antal kassor som ger minimalt antal missade " +"(" + bestMissed + ")" +": " + best);
+        return best;
     }
 
     public static int sim3(StoreState state) {
-        Random random = new Random(state.GetSeed());
+        Random random = new Random(42);
         int antalSim = 0;
         int högstaMinstaAntalet = 0;
         do {
-            int antalKassor = sim2(state);
+            int antalKassor = sim2(new StoreState(1400, 1400, 100.0, 0.45, 0.65, 0.2, 0.3, random.nextLong(), true, 20.00));
             if (antalKassor > högstaMinstaAntalet) {
                 högstaMinstaAntalet = antalKassor;
                 antalSim = 0;
@@ -46,6 +57,7 @@ public class OptimizeSim {
                 0.5, 1.0, 2.0, 3.0, 1234, true, 10.00);
         StoreState state2 = new StoreState(2, 7,  2.0,
                 0.5, 1.0, 2.0, 3.0, 1234, true, 10.00);
-        sim3(state2);
+        System.out.println(sim3(state2));
+        
     }
 }

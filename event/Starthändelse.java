@@ -1,5 +1,7 @@
 /**
- * Albin, Khaled, Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
 
 package lab6.event;
@@ -8,9 +10,17 @@ import lab6.state.CustomerFactory;
 import lab6.state.Kunder;
 
 public class Starthändelse extends Event{
+	/**
+	 * Konstruktor för Starthändelse.
+	 * @param tid
+	 */
 	public Starthändelse(double tid) {
 		super("Start", tid);
 	}
+	/**
+	 * Lägger till en första Ankomsthändelse.
+	 * Öppnar butiken.
+	 */
 
 	@Override
 	public void effect() {

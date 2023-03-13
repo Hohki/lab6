@@ -1,5 +1,7 @@
 /**
- * Albin, Khaled, Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
 
 package lab6.event;
@@ -8,11 +10,18 @@ import java.util.ArrayList;
 
 public class EventQueue {
     private ArrayList<Event> eventQueue = new ArrayList<Event>();
-
+    /**
+     * Lägger till event i eventQueue.
+     * @param event
+     */
     public void addEvent(Event event) {
         this.eventQueue.add(event);
     }
-
+    /**
+     * Sorterar eventQueue.
+     * @param Inget
+     * @return Inget
+     */
     public void sortEventQueue() {
         /*Sorterar listan efter man har adderat en event
         så att den första event i listan är de som kommer att
@@ -30,12 +39,21 @@ public class EventQueue {
             }
         }
     }
-
+    /**
+     * Tar bort ett event från eventQueue vid ett visst index.
+     * @param index
+     * @return tmpEvent
+     */
     public Event removeEvent(int index) {
         Event tmpEvent = this.eventQueue.get(index);
         this.eventQueue.remove(index);
         return tmpEvent;
     }
+    
+    /**
+     * Tar bort första eventet i eventQueue.
+     * @return tmpEvent
+     */
 
     public Event removeFirstEvent() {
         Event tmpEvent = this.eventQueue.get(0);
@@ -43,7 +61,10 @@ public class EventQueue {
         this.eventQueue.remove(0);
         return tmpEvent;
     }
-
+    /**
+     * Returnerar eventQueue i String form.
+     * @return tmp
+     */
     public String toString() {
         String tmp = "";
         for (int i = 0; i < this.eventQueue.size(); i++) {
@@ -55,15 +76,28 @@ public class EventQueue {
         }
         return tmp;
     }
-
+    /**
+     * Kollar om eventQueue är tom eller inte.
+     * @return eventQueue.isEmpty();
+     */
 
     public boolean isEmpty() {
         return this.eventQueue.isEmpty();
     }
+    
+    /**
+     * Kollar längden på eventQueue.
+     * @return eventQueue.size();
+     */
 
     public int size() {
         return this.eventQueue.size();
     }
+    
+    /**
+     * Returnerar första eventet i eventQueue.
+     * @return event
+     */
 
     public Event getFirst() {
         if (this.eventQueue.size()>0) {

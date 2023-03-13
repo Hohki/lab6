@@ -1,7 +1,7 @@
 /**
- * @author Albin
- * @author Khaled
- * @author Gabriel
+ *@author Gabriel Axheim Gustafsson
+ *@author Khaled Chaaban
+ *@author Albin Kullberg
  * */
 
 package lab6.view;
@@ -15,16 +15,20 @@ import java.text.DecimalFormat;
 public class StoreView extends View {
     StoreState state;
     private DecimalFormat df = new DecimalFormat("0.00");
-
+    /**
+     * Konstruktor för StoreView.
+     * @param state
+     */
     public StoreView(StoreState state) {
         super(state);
         this.state = state;
         this.state.addObserver(this);
         Parameters();
     }
-
-    //Observable o är state objected
-    //Object arg är själva eventet som ändrade på state objectet
+    /**
+     * @param o Det state som blir observerat
+     * @param arg Det event som ändrade på state
+     */
     @Override
     public void update(Observable o, Object arg) {
         if (this.state.getALlowView()) {
@@ -35,13 +39,15 @@ public class StoreView extends View {
             }
         } else {
             if (arg instanceof Stopphändelse) {
-                System.out.println("Stängning sker tiden " + state.GetCloseTime() + " och stopphändelsen sker tiden " + state.CurrentTime());
+                EndPrint();
             }
         }
     }
-
+    
+    /**
+     * @param Inget
+     */
     public void Parameters() {
-        if (this.state.getALlowView()) {
         System.out.println("PARAMETRAR");
         System.out.println("==========");
         System.out.println("Antal kassor, N..........: " + state.GetNumberOfKassor());
@@ -55,15 +61,10 @@ public class StoreView extends View {
         System.out.println("=======");
         System.out.println("   Tid Händelse   Kund   ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
         System.out.println("  0,00 Start");
-        } else {
-            System.out.println("Max som ryms, M..........: " + state.GetMaxCustomer());
-            System.out.println("Ankomsthastighet, lambda.: " + state.GetLambda());
-            System.out.println("Plocktider, [Pmin...Pmax]: [" + state.GetPlockMin() + ".." + state.GetPlockMax() + "]") ;
-            System.out.println("Betaltider, [Kmin...Kmax]: [" + state.GetPayMin() + ".." + state.GetPayMax() + "]");
-            System.out.println("Frö, f...................: " + state.GetSeed());
-        }
     }
-
+    /**
+     * @param Inget
+     */
     public void WriteLine() {
     	if (state.CurrentEvent() instanceof Stängningshändelse) {
     		System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % 4.2f %5s %s %n",
@@ -82,7 +83,9 @@ public class StoreView extends View {
     	}
         
     }
-
+    /**
+     * @param Inget
+     */
     public void EndPrint() {
         System.out.println("RESULTAT");
         System.out.println("========");
