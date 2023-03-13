@@ -16,6 +16,7 @@ public class Betalningshändelse extends Event{
 
 	@Override
 	public void effect() {
+		state.notify(this);
 		state.IncreaseNumberOfPayedCustomers();
 		state.DecreaseCustomers();
 		//Delete current costumer? Queue times?
@@ -29,8 +30,6 @@ public class Betalningshändelse extends Event{
             eventQueue.addEvent(betalningshändelse);																	
             state.GetQueue().removeFirst();																					//Decreases queue
         }
-
-		state.notify(this);
 	}
 
 }

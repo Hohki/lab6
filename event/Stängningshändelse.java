@@ -15,8 +15,8 @@ public class Stängningshändelse extends Event {
 
 	@Override
 	public void effect() {
-		state.SetStoreState(false);
 		state.notify(this);
+		state.SetStoreState(false);
 	}
 
 }

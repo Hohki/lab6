@@ -15,6 +15,7 @@ public class Plockhändelse extends Event {
 
     @Override
     public void effect() {
+        state.notify(this);
         if (state.FreeKassor() > 0) {
             state.DecreaseFreeKassor();
             double nextPay = this.state.GetNextPay(this.tid);
@@ -24,6 +25,5 @@ public class Plockhändelse extends Event {
             state.GetQueue().add(this.kund);
             state.IncreaseNumberOfQueuedCustomers();
         }
-        state.notify(this);
     }
 }

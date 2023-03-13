@@ -62,7 +62,7 @@ public class StoreView extends View {
     		System.out.println(" " + df.format(state.CurrentTime()) + " Stop");
     	}
     	else {
-    		System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % 4.2f %5s %s %n",
+    		System.out.printf("%6.2f %-9s %5s %3s %4s % 6.2f % 3d  % 2d  % 4d  %5s % -6.2f %5s %s %n",
                     state.CurrentTime(), state.CurrentEvent().eventName(), state.CurrentEvent().kund().getID(), state.GetStore() ? "Ö" : "S", state.FreeKassor(), state.GetFreeKassorTime(),
                     state.GetNumberOfCustomers(), state.NumberOfPayedCustomers(), state.MissedCustomers(), state.NumberOfQueuedCustomers(),
                     state.GetQueueTime(), state.CurrentlyQueued().size(), state.GetQueue().toString());
@@ -75,12 +75,12 @@ public class StoreView extends View {
         System.out.println("========");
         System.out.println("1) Av " + (state.NumberOfPayedCustomers() + state.MissedCustomers()) + " handlade " +
                 state.NumberOfPayedCustomers() + " medan " + state.MissedCustomers() + " missades.");
-        System.out.println("2) Total tid " + state.GetNumberOfKassor() + " kassor varit lediga: " + state.GetFreeKassorTime() + " te.");
-        System.out.println("Genomsnittlig ledig kassatid: " + state.GetFreeKassorTime() / state.GetNumberOfKassor() +
-                " te (dvs " + (state.GetFreeKassorTime() / state.GetNumberOfKassor()) / state.getLastPay() * 100 +
+        System.out.println("2) Total tid " + state.GetNumberOfKassor() + " kassor varit lediga: " + df.format(state.GetFreeKassorTime()) + " te.");
+        System.out.println("Genomsnittlig ledig kassatid: " + df.format(state.GetFreeKassorTime() / state.GetNumberOfKassor()) +
+                " te (dvs " + df.format((state.GetFreeKassorTime() / state.GetNumberOfKassor()) / state.getLastPay() * 100) +
                 "% av tiden från öppning tills sista kunden betalat).");
-        System.out.println("3) Total tid " + state.NumberOfQueuedCustomers() + " tvingats köa: " + state.GetQueueTime() + " te.");
-        System.out.println("Genomsnittlig kötid: " + state.GetQueueTime() / state.NumberOfQueuedCustomers() + " te.");
+        System.out.println("3) Total tid " + state.NumberOfQueuedCustomers() + " tvingats köa: " + df.format(state.GetQueueTime()) + " te.");
+        System.out.println("Genomsnittlig kötid: " + df.format(state.GetQueueTime() / state.NumberOfQueuedCustomers()) + " te.");
 
     }
 }

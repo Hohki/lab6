@@ -15,6 +15,7 @@ public class Ankomsthändelse extends Event {
 
 	@Override
 	public void effect() {
+		state.notify(this);
 		if(state.GetStore()) {
 			double nextArrival = state.GetNextArrival(this.tid);
 			Kunder newKund = new Kunder(new CustomerFactory().getNumber());
@@ -29,6 +30,5 @@ public class Ankomsthändelse extends Event {
 				state.IncreaseMissedCustomers();
 			}
 		}
-		state.notify(this);
 	}
 }
