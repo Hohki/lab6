@@ -30,12 +30,13 @@ public class StoreView extends View {
             }
         } else {
             if (arg instanceof Stopphändelse) {
-                EndPrint();
+                System.out.println("Stängning sker tiden " + state.GetCloseTime() + " och stopphändelsen sker tiden " + state.CurrentTime());
             }
         }
     }
 
     public void Parameters() {
+        if (this.state.getALlowView()) {
         System.out.println("PARAMETRAR");
         System.out.println("==========");
         System.out.println("Antal kassor, N..........: " + state.GetNumberOfKassor());
@@ -49,6 +50,13 @@ public class StoreView extends View {
         System.out.println("=======");
         System.out.println("   Tid Händelse   Kund   ?  led   ledT   I   $   :-(   Köat   KöT  Köar  [Kassakö..]");
         System.out.println("  0,00 Start");
+        } else {
+            System.out.println("Max som ryms, M..........: " + state.GetMaxCustomer());
+            System.out.println("Ankomsthastighet, lambda.: " + state.GetLambda());
+            System.out.println("Plocktider, [Pmin...Pmax]: [" + state.GetPlockMin() + ".." + state.GetPlockMax() + "]") ;
+            System.out.println("Betaltider, [Kmin...Kmax]: [" + state.GetPayMin() + ".." + state.GetPayMax() + "]");
+            System.out.println("Frö, f...................: " + state.GetSeed());
+        }
     }
 
     public void WriteLine() {

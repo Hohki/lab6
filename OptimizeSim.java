@@ -17,19 +17,23 @@ public class OptimizeSim {
     }
 
     public static int sim2(StoreState state) {
-        int numberOfKassor = 1;
-        int missedCustomers;
-        do {
-            if (!(numberOfKassor > state.GetMaxCustomer())) {
-                missedCustomers = sim1(numberOfKassor + 1, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(), state.GetPayMin(), state.GetPayMax(), state.GetSeed(), state.GetCloseTime());
-                numberOfKassor++;
-            } else {
+        int counter = 0;
+        int antalKassor = 0;
+        int missadeCustomers = sim1(antalKassor, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(), state.GetPayMin(), state.GetPayMax(), state.GetSeed(),
+        state.GetCloseTime());
+
+        while (antalKassor < state.GetMaxCustomer()) {
+            int newMissadeCustomers = sim1(antalKassor++, state.GetMaxCustomer(), state.GetLambda(), state.GetPlockMin(), state.GetPlockMax(), state.GetPayMin(), state.GetPayMax(), state.GetSeed(),
+                    state.GetCloseTime());
+
+            if (missadeCustomers == newMissadeCustomers) {
                 break;
             }
-        } while (missedCustomers > 0);
+            missadeCustomers = newMissadeCustomers;
+        }
 
-        System.out.println("Minsta antal kassor som ger minimalt antal missade: " + numberOfKassor);
-        return numberOfKassor;
+        System.out.println("Minsta antal kassor som ger minimalt antal missade " +"(" + state.MissedCustomers() + ")" +": " + antalKassor );
+        return antalKassor;
     }
 
     public static int sim3(StoreState state) {
@@ -52,6 +56,8 @@ public class OptimizeSim {
     public static void main(String[] args) {
         StoreState state = new StoreState(2, 5,  1.0,
                 0.5, 1.0, 2.0, 3.0, 1234, true, 10.00);
-        sim3(state);
+        StoreState state2 = new StoreState(2, 7,  2.0,
+                0.5, 1.0, 2.0, 3.0, 1234, true, 10.00);
+        sim2(state2);
     }
 }

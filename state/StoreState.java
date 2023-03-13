@@ -61,6 +61,7 @@ public class StoreState extends State {
         this.closeTime = closeTime;
     }
 
+
     public double GetLambda() {
         return this.lambda;
     }
