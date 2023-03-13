@@ -19,9 +19,9 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param str
-	 * @param tid
-	 * @param kund
+	 * @param str str
+	 * @param tid tid
+	 * @param kund kund
 	 */
 	public Event(String str, double tid, Kunder kund) {
 		this.str = str;
@@ -32,8 +32,8 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param str
-	 * @param tid
+	 * @param str str
+	 * @param tid tid
 	 */
 
 	public Event(String str, double tid) {
@@ -44,7 +44,7 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param str
+	 * @param str str
 	 */
 
 	public Event(String str) {
@@ -54,7 +54,7 @@ public abstract class Event {
 	/**
 	 * Konstruktor för Event
 	 * 
-	 * @param state
+	 * @param state state
 	 */
 
 	public Event(StoreState state) {
@@ -66,7 +66,7 @@ public abstract class Event {
 	/**
 	 * Sätter state till state.
 	 * 
-	 * @param state
+	 * @param state state
 	 */
 
 	public void setState(StoreState state) {

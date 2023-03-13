@@ -15,8 +15,8 @@ public class AnkomstEvent extends Event {
 	/**
 	 * Konstruktor för Ankomsthändelse
 	 * 
-	 * @param tid
-	 * @param kund
+	 * @param tid tid
+	 * @param kund kund
 	 */
 
 	public AnkomstEvent(double tid, Kunder kund) {

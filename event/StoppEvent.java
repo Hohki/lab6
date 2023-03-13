@@ -12,7 +12,7 @@ public class StoppEvent extends Event {
 	/**
 	 * Konstruktor för Stopphändelse
 	 * 
-	 * @param tid
+	 * @param tid tid
 	 */
 	public StoppEvent(double tid) {
 		super("Stopp", tid);
