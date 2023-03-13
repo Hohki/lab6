@@ -22,6 +22,7 @@ public abstract class Event {
 
 	/**
 	 * Konstruktor för Event
+	 * 
 	 * @param str str
 	 * @param tid tid
 	 * @param kund kund

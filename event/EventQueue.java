@@ -49,7 +49,7 @@ public class EventQueue {
 	/**
 	 * Tar bort ett event från eventQueue vid ett visst index.
 	 * 
-	 * @param index index
+	 * @param index index på eventQueue
 	 * @return tmpEvent
 	 */
 	public Event removeEvent(int index) {

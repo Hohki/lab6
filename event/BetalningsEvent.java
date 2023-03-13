@@ -14,8 +14,8 @@ public class BetalningsEvent extends Event {
 	/**
 	 * Konstruktor för Betalningshändelse
 	 * 
-	 * @param tid
-	 * @param kund
+	 * @param tid tid
+	 * @param kund kund
 	 */
 	public BetalningsEvent(double tid, Kunder kund) {
 		super("Betalning", tid, kund);

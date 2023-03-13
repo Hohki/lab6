@@ -13,7 +13,7 @@ public class StartEvent extends Event {
 	/**
 	 * Konstruktor för Starthändelse.
 	 * 
-	 * @param tid
+	 * @param tid tid
 	 */
 	public StartEvent(double tid) {
 		super("Start", tid);

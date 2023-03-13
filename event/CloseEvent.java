@@ -10,7 +10,7 @@ public class CloseEvent extends Event {
 	/**
 	 * Konstruktor för Stängningshändelse.
 	 * 
-	 * @param tid
+	 * @param tid tid
 	 */
 	public CloseEvent(double tid) {
 		super("Stängning", tid);

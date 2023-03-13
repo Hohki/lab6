@@ -15,8 +15,8 @@ public class PlockEvent extends Event {
 	/**
 	 * Konstruktor för Plockhändelse.
 	 * 
-	 * @param tid
-	 * @param kund
+	 * @param tid tid
+	 * @param kund tid
 	 */
 	public PlockEvent(double tid, Kunder kund) {
 		super("Plock", tid, kund);
