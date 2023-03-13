@@ -39,7 +39,7 @@ public class EventQueue {
         return tmpEvent;
     }
 
-/*    public String toString() {
+    public String toString() {
         String tmp = "";
         for (int i = 0; i < this.eventQueue.size(); i++) {
             if (this.eventQueue.get(i).kund() != null) {
@@ -49,7 +49,7 @@ public class EventQueue {
             }
         }
         return tmp;
-    }*/
+    }
 
 
     public boolean isEmpty() {

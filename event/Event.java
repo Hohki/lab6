@@ -51,6 +51,7 @@ public abstract class Event {
 	public String eventName() {
 		return this.str;
 	}
+
 	public double tid() {return this.tid;}
 
 	public Kunder kund() {
@@ -59,5 +60,9 @@ public abstract class Event {
 
 	public EventQueue getEventQueue() {
 		return eventQueue;
+	}
+
+	public String toString() {
+		return "(" + this.str + ", " + this.tid + ")";
 	}
 }
