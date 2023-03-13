@@ -91,8 +91,8 @@ public class OptimizeSim {
 	 * @param args args
 	 */
 	public static void main(String[] args) {
-		StoreState state = new StoreState(K.M, 2, K.L, K.LOW_COLLECTION_TIME, K.HIGH_COLLECTION_TIME, K.LOW_PAYMENT_TIME, K.HIGH_PAYMENT_TIME, K.SEED, true, K.END_TIME);
-		System.out.println("Bästa antalet kassor är: " + sim3(state));
+		StoreState state = new StoreState(K.M, 5, K.L, K.LOW_COLLECTION_TIME, K.HIGH_COLLECTION_TIME, K.LOW_PAYMENT_TIME, K.HIGH_PAYMENT_TIME, K.SEED, true, K.END_TIME);
+		System.out.println("Bästa antalet kassor är: " + sim2(state));
 
 	}
 }

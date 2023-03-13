@@ -21,7 +21,7 @@ public class RunSim {
 	 * @param args args
 	 */
 	public static void main(String[] args) {
-		StoreState state = new StoreState(2, 5, 1.0, 0.5, 1.0, 2.0, 3.0, 1234, true, 10.0);
+		StoreState state = new StoreState(2, 7, 3.0, 0.6, 0.9, 0.35, 0.6, 13, true, 8.0);
 		StoreView storeView = new StoreView(state);
 		Simulator sim = new Simulator(state, storeView);
 		sim.Run();
